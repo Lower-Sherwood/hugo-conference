@@ -4,11 +4,7 @@
 
     <div class="content" id="content">
       <div class="wrapper">
-        {{ range $section := .Site.Params.Sections }}
-          <section class="{{ $section }}" id="{{ $section }}">
-            {{ partial $section $.Site.Params }}
-          </section>
-        {{ end }}
+          {{ partial "404.html" . }}
 
         {{ partial "footer.html" . }}
       </div>
