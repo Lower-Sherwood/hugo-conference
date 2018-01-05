@@ -2,9 +2,11 @@
 
 Hugo conference is a theme for conferences/events based on the original [conf-boilerplate theme](https://github.com/braziljs/conf-boilerplate/) by [BrazilJS Foundation](http://braziljs.org/) and his many contributors.
 
+This version is specifically tailored for the [2018 Sherwoodstock Llama show](https://sherwoodstock.com)
+
 ## Building my conference site from scratch
 
-1. Install [Hugo](https://gohugo.io)
+1. Install [Hugo](https://gohugo.io) - this is known to work with 0.31.1, but not with 0.17
 2. Create a new site by running:
 
         hugo new site my-conf
@@ -34,5 +36,5 @@ Ps: It's important to change the `baseurl` property from `config.yml` file in or
 
 ## License
 
-MIT, see [LICENSE](https://github.com/jweslley/hugo-conference/blob/master/LICENSE).
+MIT, see [LICENSE](https://github.com/sherwoodstock/hugo-conference/blob/master/LICENSE).
 
