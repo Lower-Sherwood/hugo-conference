@@ -381,6 +381,19 @@ nav {
   padding: 19px;
   margin: 0 -20px 0;
 }
+
+/* Contact */
+.contact {
+  padding: 19px;
+  margin: 0 -20px 0;
+}
+
+/* Location */
+.location {
+  padding: 19px;
+  margin: 0 -20px 0;
+}
+
 /* =============================================================================
    SPEAKER
    ========================================================================== */
@@ -529,6 +542,12 @@ nav {
     box-sizing: border-box;
   }
   .about {
+    margin: 0;
+  }
+  .contact {
+    margin: 0;
+  }
+  .location {
     margin: 0;
   }
 }
@@ -777,6 +796,11 @@ nav {
 /* =============================================================================
    LOCATION
    ========================================================================== */
+.location {
+  border: 1px solid #e7e7e7;
+  background: #fff;
+  border-radius: 4px;
+}
 .location-area {
   background: #e7e7e7;
   border: 1px solid #ccc;
@@ -861,6 +885,11 @@ nav {
 /* =============================================================================
    CONTACT
    ========================================================================== */
+.contact {
+  border: 1px solid #e7e7e7;
+  background: #fff;
+  border-radius: 4px;
+}
 .form input[type=text],
 .form input[type=email],
 .form textarea {
