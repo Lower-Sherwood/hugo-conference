@@ -394,6 +394,12 @@ nav {
   margin: 0 -20px 0;
 }
 
+/* Schedule  */
+.schedule {
+  padding: 19px;
+  margin: 0 -20px 0;
+}
+
 /* =============================================================================
    SPEAKER
    ========================================================================== */
@@ -548,6 +554,9 @@ nav {
     margin: 0;
   }
   .location {
+    margin: 0;
+  }
+  .schedule {
     margin: 0;
   }
 }
@@ -830,6 +839,11 @@ nav {
 /* =============================================================================
    SCHEDULE
    ========================================================================== */
+.schedule {
+  background: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 .schedule-tbl {
   background: #fff;
   border: 1px solid #ccc;
