@@ -1,11 +1,11 @@
 <h2 class="section-title">{{ .titles.schedule }}</h2>
 
 <div class="schedule-tbl">
-{{ range $slot := .schedule }}
-  <h3>
-    {{ .date }}
-  </h3>
     <table>
+      {{ range $slot := .schedule }}
+      <thead>
+      <th class="schedule-date" colspan=3>{{ .date }}</th>
+      </thead>
       <thead>
         <tr>
           <th class="schedule-time">Time</th>
@@ -38,6 +38,6 @@
           {{ end }}
         {{ end }}
       </tbody>
+    {{ end }}
     </table>
-{{ end }}
 </div>
