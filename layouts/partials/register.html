@@ -10,26 +10,22 @@
       <div class="registration-tbl">
         <table> 
 
-          <tr>
-            <th>
-              Name
-            </th>
-            <td colspan=2>
-              <input type="text" name="name">
-            </td>
-          </tr>
+          {{ range $registerform := .registerform }}
 
           <tr>
             <th>
-              Address:
+              {{ .displaytext }}:
             </th>
             <td colspan=2>
-              <input id="autocomplete" placeholder="Enter your address" type="text" name="rawaddress"></input>
-              <!--<input id="autocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text" name="rawaddress"></input>-->
+                {{ if ne .hidden nil }}
+                <input colspan="2" type="{{ .type }}" name="{{ .name }}" placeholder="{{ .defaulttext }}" hidden="{{ .hidden }}" id="{{ .id}}">
+                {{ else }}
+                <input colspan="2" type="{{ .type }}" name="{{ .name }}" placeholder="{{ .defaulttext }}" id="{{ .id}}">
+                {{ end }}
             </td>
           </tr>
 
-          <script src="https://maps.googleapis.com/maps/api/js?key={{ .Site.Params.GoogleMapsAPIKey }}&libraries=places&callback=initAutocomplete" defer></script>
+          {{ end }}
 
           </table>
 
@@ -44,12 +40,6 @@
           <input class="field" id="postal_code" disabled="true" type="hidden"></input>
           <input class="field" id="country" disabled="true" type="hidden"></input>
       </div>
-      <!--<p>
-        {{ range $registerform := .registerform }}
-          {{ .displaytext }}:
-          <input type="{{ .type }}" name="{{ .name }}" value="{{ .defaulttext }}"><br>
-        {{ end }}
-      </p>-->
 
     <input class="btn btn-send" type="submit" value="Send">
     <input class="btn btn-reset" type="reset" value="Reset">
