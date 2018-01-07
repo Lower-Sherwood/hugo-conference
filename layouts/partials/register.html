@@ -11,24 +11,34 @@
         <table> 
 
           {{ range $registerform := .registerform }}
-
           <tr>
             <th>
               {{ .displaytext }}:
             </th>
-            <td colspan=2>
-                {{ if ne .hidden nil }}
-                <input colspan="2" type="{{ .type }}" name="{{ .name }}" placeholder="{{ .defaulttext }}" hidden="{{ .hidden }}" id="{{ .id}}">
-                {{ else }}
-                <input colspan="2" type="{{ .type }}" name="{{ .name }}" placeholder="{{ .defaulttext }}" id="{{ .id}}">
-                {{ end }}
+            {{ if eq .type "text" }}
+            <td colspan="2">
+                  {{ if ne .hidden nil }}
+                  <input type="{{ .type }}" name="{{ .name }}" placeholder="{{ .defaulttext }}" hidden="{{ .hidden }}" id="{{ .id}}">
+                  {{ else }}
+                  <input type="{{ .type }}" name="{{ .name }}" placeholder="{{ .defaulttext }}" id="{{ .id}}">
+                  {{ end }}
             </td>
+            {{ else if eq .type "select" }}
+            <td colspan="2">
+                <select name="{{ .name}}">
+                {{ range $values := .values }}
+                <option value="{{ .option }}">{{ .option }}</option>
+                {{ end }}
+              </select>
+            {{ end }}
           </tr>
 
           {{ end }}
 
           </table>
 
+          <!-- form fields for geolocated form -->
+          <!-- These would be blank if we don't do address lookups -->
           <input class="field" id="street_number" disabled="true" type="hidden"></input>
           <input class="field" id="route" disabled="true" type="hidden"></input>
           <!-- Note: Selection of address components in this example is typical.
@@ -39,6 +49,7 @@
           <input class="field" id="administrative_area_level_1" disabled="true" type="hidden"></input>
           <input class="field" id="postal_code" disabled="true" type="hidden"></input>
           <input class="field" id="country" disabled="true" type="hidden"></input>
+          <!-- End of geolocation -->
       </div>
 
     <input class="btn btn-send" type="submit" value="Send">
