@@ -1,0 +1,57 @@
+<h2 class="section-title">{{ .titles.register }}</h2>
+
+<ul class="register-list">
+    {{ range $registertext := .register }}
+    <p>
+      {{ .text }}
+    </p>
+    {{ end }}
+    <form name="Register" id="form" class="form" data-netlify="true">
+      <div class="registration-tbl">
+        <table> 
+
+          <tr>
+            <th>
+              Name
+            </th>
+            <td colspan=2>
+              <input type="text" name="name">
+            </td>
+          </tr>
+
+          <tr>
+            <th>
+              Address:
+            </th>
+            <td colspan=2>
+              <input id="autocomplete" placeholder="Enter your address" type="text" name="rawaddress"></input>
+              <!--<input id="autocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text" name="rawaddress"></input>-->
+            </td>
+          </tr>
+
+          <script src="https://maps.googleapis.com/maps/api/js?key={{ .Site.Params.GoogleMapsAPIKey }}&libraries=places&callback=initAutocomplete" defer></script>
+
+          </table>
+
+          <input class="field" id="street_number" disabled="true" type="hidden"></input>
+          <input class="field" id="route" disabled="true" type="hidden"></input>
+          <!-- Note: Selection of address components in this example is typical.
+               You may need to adjust it for the locations relevant to your app. See
+               https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform
+          -->
+          <input class="field" id="locality" disabled="true" type="hidden"></input>
+          <input class="field" id="administrative_area_level_1" disabled="true" type="hidden"></input>
+          <input class="field" id="postal_code" disabled="true" type="hidden"></input>
+          <input class="field" id="country" disabled="true" type="hidden"></input>
+      </div>
+      <!--<p>
+        {{ range $registerform := .registerform }}
+          {{ .displaytext }}:
+          <input type="{{ .type }}" name="{{ .name }}" value="{{ .defaulttext }}"><br>
+        {{ end }}
+      </p>-->
+
+    <input class="btn btn-send" type="submit" value="Send">
+    <input class="btn btn-reset" type="reset" value="Reset">
+    </form>
+</ul>
