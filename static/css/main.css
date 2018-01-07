@@ -400,6 +400,12 @@ nav {
   margin: 0 -20px 0;
 }
 
+/* Register */
+.register {
+  padding: 19px;
+  margin: 0 -20px 0;
+}
+
 /* =============================================================================
    SPEAKER
    ========================================================================== */
@@ -557,6 +563,9 @@ nav {
     margin: 0;
   }
   .schedule {
+    margin: 0;
+  }
+  .register {
     margin: 0;
   }
 }
@@ -793,6 +802,12 @@ nav {
 .content a:focus {
   color: #fddd52;
   text-decoration: underline;
+}
+/* Register */
+.register {
+    border: 1px solid #e7e7e7;
+    background: #fff;
+    border-radius: 4px;
 }
 /* =============================================================================
    ABOUT
