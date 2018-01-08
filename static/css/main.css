@@ -177,7 +177,7 @@ button,
 input,
 select,
 textarea {
-  font-size: 100%;
+  font-size: 1.8em;
   margin: 0;
   vertical-align: baseline;
   *vertical-align: middle;
@@ -358,7 +358,7 @@ nav {
   cursor: pointer;
   display: inline-block;
   padding: 15px 30px;
-  font-size: 2em;
+  font-size: 1.8em;
   line-height: 1em;
   vertical-align: center;
   letter-spacing: -0.02em;
@@ -446,19 +446,23 @@ nav {
   padding: 20px;
 }
 
-.registration-tbl table {
+.registration-tbl table,
+.contact-tbl table {
   border-collapse: collapse; 
   font-size: 1em;
 }
 .registration-tbl td,
-.registration-tbl th {
+.registration-tbl th,
+.contact-tbl td,
+.contact-tbl th {
   position: relative;
   padding: 20px 30px;
-  font-size: 1.4em;
+/*  font-size: 1.4em;*/
   line-height: 1.4em;
   text-align: left;
 }
-.registration-tbl th {
+.registration-tbl th,
+.contact-tbl th {
   padding: 5px 30px;
   color: #2b2b2b;
   font-size: 2em;
@@ -629,14 +633,18 @@ nav {
   }
 
   /* registration */
-  .registration-tbl {
+  .registration-tbl,
+  .contact-tbl {
     padding: 1px;
   }
   .registration-tbl td,
-  .registration-tbl th {
+  .registration-tbl th,
+  .contact-tbl td,
+  .contact-tbl th{
     padding: 10px;
   }
-  .registration-tbl th {
+  .registration-tbl th,
+  .contact-tbl th {
     padding: 10px;
     font-size: 1.8em;
   }
@@ -833,7 +841,7 @@ nav {
 /* =============================================================================
    CONTENT
    ========================================================================== */
-.content a {
+.content a:not(.btn) {
   color: #f0a303;
 }
 .content a:hover,
@@ -891,33 +899,40 @@ nav {
 }
 
 /* =============================================================================
-   REGISTRATION
+   REGISTRATION & Contact
    ========================================================================== */
 .registration {
   background: #ffffff;
   border: 1px solid #e7e7e7;
   border-radius: 4px;
 }
-.registration-tbl {
+.registration-tbl,
+.contact-tbl {
   background: #fff;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15);
 }
-.registration-tbl table {
+.registration-tbl table,
+.contact-tbl table {
   background: #fff;
 }
 .registration-tbl td,
-.registration-tbl th {
+.registration-tbl th,
+.contact-tbl td,
+.contact-tbl th{
   border-bottom: 1px solid #e7e7e7;
 }
-.registration-tbl tbody tr:nth-child(2n+1) {
+.registration-tbl tbody tr:nth-child(2n+1),
+.contact-tbl tbody tr:nth-child(2n+1) {
   background: #f6f6f6;
 }
-.registration-tbl th {
+.registration-tbl th,
+.contact-tbl th {
   color: #2b2b2b;
 }
-.registration-tbl tbody tr:hover {
+.registration-tbl tbody tr:hover, 
+.contact-tbl tbody tr:hover {
   background: #fffde1;
 }
 

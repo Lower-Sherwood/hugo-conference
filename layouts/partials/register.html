@@ -39,8 +39,9 @@
             </td>
             {{ else if eq .type "button" }}
               {{ range $values := .values }}
-              <td>
-                  <button class="snipcart-add-item"
+              <td colspan="{{ .span }}">
+                  <button 
+                      class="btn snipcart-add-item"
                       data-item-shippable="false"
                       data-item-has-taxes-included="true"
                       data-item-id="{{ .option }}"
@@ -70,16 +71,13 @@
           <input class="field" id="postal_code" disabled="true" type="hidden"></input>
           <input class="field" id="country" disabled="true" type="hidden"></input>
           <!-- End of geolocation -->
-      <tr>
-      <td colspan="3">
-          <a href="#" class="snipcart-checkout">Submit Registration</a>
-      </td>
-      </tr>
-      </table>
+          <tr>
+            <td colspan="4">
+              <a href="#" class="btn snipcart-checkout">Finish Registration</a>
+            </td>
+          </tr>
+        </table>
       </div>
-
-      <!--<button class="btn btn-send" type="submit" value="Send">Send</button>
-      <button class="btn btn-reset" type="reset" value="Reset">Reset</button>-->
 
     </form>
 </ul>
