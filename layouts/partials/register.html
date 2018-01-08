@@ -16,7 +16,7 @@
               {{ .displaytext }}:
             </th>
             {{ if eq .type "text" }}
-            <td colspan="2">
+            <td colspan="3">
                   {{ if ne .hidden nil }}
                   <input type="{{ .type }}" name="{{ .name }}" placeholder="{{ .defaulttext }}" hidden="{{ .hidden }}" id="{{ .id}}">
                   {{ else }}
@@ -24,18 +24,38 @@
                   {{ end }}
             </td>
             {{ else if eq .type "select" }}
-            <td colspan="2">
+            <td colspan="3">
                 <select name="{{ .name}}">
                 {{ range $values := .values }}
                 <option value="{{ .option }}">{{ .option }}</option>
                 {{ end }}
               </select>
+            </td>
+            {{ else if eq .type "radio" }}
+            <td colspan="3">
+                {{ range $values := .values }}
+                <input type="radio" name="{{ .name }}" value="{{ .option }}">{{ .option }}
+                {{ end }}
+            </td>
+            {{ else if eq .type "button" }}
+              {{ range $values := .values }}
+              <td>
+                  <button class="snipcart-add-item"
+                      data-item-shippable="false"
+                      data-item-has-taxes-included="true"
+                      data-item-id="{{ .option }}"
+                      data-item-name="{{ .option }}"
+                      data-item-price="{{ .price }}"
+                      data-item-description="{{ .description }}"
+                      data-item-url="/">
+                      {{ .option }} ${{ .price }}
+                    </button>
+              </td>
+              {{ end }}
             {{ end }}
           </tr>
 
           {{ end }}
-
-          </table>
 
           <!-- form fields for geolocated form -->
           <!-- These would be blank if we don't do address lookups -->
@@ -50,9 +70,16 @@
           <input class="field" id="postal_code" disabled="true" type="hidden"></input>
           <input class="field" id="country" disabled="true" type="hidden"></input>
           <!-- End of geolocation -->
+      <tr>
+      <td colspan="3">
+          <a href="#" class="snipcart-checkout">Submit Registration</a>
+      </td>
+      </tr>
+      </table>
       </div>
 
-    <input class="btn btn-send" type="submit" value="Send">
-    <input class="btn btn-reset" type="reset" value="Reset">
+      <!--<button class="btn btn-send" type="submit" value="Send">Send</button>
+      <button class="btn btn-reset" type="reset" value="Reset">Reset</button>-->
+
     </form>
 </ul>
