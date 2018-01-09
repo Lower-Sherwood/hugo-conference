@@ -1,0 +1,83 @@
+<h2 class="section-title">{{ .titles.register }}</h2>
+
+<ul class="register-list">
+    {{ range $registertext := .register }}
+    <p>
+      {{ .text }}
+    </p>
+    {{ end }}
+    <form name="Register" id="form" class="form" data-netlify="true">
+      <div class="registration-tbl">
+        <table> 
+
+          {{ range $registerform := .registerform }}
+          <tr>
+            <th>
+              {{ .displaytext }}:
+            </th>
+            {{ if eq .type "text" }}
+            <td colspan="3">
+                  {{ if ne .hidden nil }}
+                  <input type="{{ .type }}" name="{{ .name }}" placeholder="{{ .defaulttext }}" hidden="{{ .hidden }}" id="{{ .id}}">
+                  {{ else }}
+                  <input type="{{ .type }}" name="{{ .name }}" placeholder="{{ .defaulttext }}" id="{{ .id}}">
+                  {{ end }}
+            </td>
+            {{ else if eq .type "select" }}
+            <td colspan="3">
+                <select name="{{ .name}}">
+                {{ range $values := .values }}
+                <option value="{{ .option }}">{{ .option }}</option>
+                {{ end }}
+              </select>
+            </td>
+            {{ else if eq .type "radio" }}
+            <td colspan="3">
+                {{ range $values := .values }}
+                <input type="radio" name="{{ .name }}" value="{{ .option }}">{{ .option }}
+                {{ end }}
+            </td>
+            {{ else if eq .type "button" }}
+              {{ range $values := .values }}
+              <td colspan="{{ .span }}">
+                  <button 
+                      class="btn snipcart-add-item"
+                      data-item-shippable="false"
+                      data-item-has-taxes-included="true"
+                      data-item-id="{{ .option }}"
+                      data-item-name="{{ .option }}"
+                      data-item-price="{{ .price }}"
+                      data-item-description="{{ .description }}"
+                      data-item-url="/">
+                      {{ .option }} ${{ .price }}
+                    </button>
+              </td>
+              {{ end }}
+            {{ end }}
+          </tr>
+
+          {{ end }}
+
+          <!-- form fields for geolocated form -->
+          <!-- These would be blank if we don't do address lookups -->
+          <input class="field" id="street_number" disabled="true" type="hidden"></input>
+          <input class="field" id="route" disabled="true" type="hidden"></input>
+          <!-- Note: Selection of address components in this example is typical.
+               You may need to adjust it for the locations relevant to your app. See
+               https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform
+          -->
+          <input class="field" id="locality" disabled="true" type="hidden"></input>
+          <input class="field" id="administrative_area_level_1" disabled="true" type="hidden"></input>
+          <input class="field" id="postal_code" disabled="true" type="hidden"></input>
+          <input class="field" id="country" disabled="true" type="hidden"></input>
+          <!-- End of geolocation -->
+          <tr>
+            <td colspan="4">
+              <a href="#" class="btn snipcart-checkout">Finish Payment</a>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+    </form>
+</ul>
