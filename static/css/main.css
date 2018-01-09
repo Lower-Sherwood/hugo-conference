@@ -177,7 +177,7 @@ button,
 input,
 select,
 textarea {
-  font-size: 1.8em;
+  font-size: 1.4em;
   margin: 0;
   vertical-align: baseline;
   *vertical-align: middle;
@@ -352,7 +352,8 @@ nav {
   margin-right: 20px;
 }
 .call-action-area .call-action-link,
-.btn {
+.btn,
+.button {
   position: relative;
   top: -5px;
   cursor: pointer;
@@ -371,7 +372,9 @@ nav {
 .call-action-area .call-action-link:hover,
 .call-action-area .call-action-link:focus,
 .btn:hover,
-.btn:focus {
+.btn:focus,
+.button:hover,
+.button:focus {
   top: 0;
 }
 /* =============================================================================
@@ -567,7 +570,8 @@ nav {
 .form textarea {
   height: 300px;
 }
-.form .btn {
+.form .btn,
+.button {
   float: right;
 }
 /* =============================================================================

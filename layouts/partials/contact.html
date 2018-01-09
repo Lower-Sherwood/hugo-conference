@@ -8,53 +8,43 @@
     {{ end }}
 
 <!--Start Mailblast Signup Form-->
+<div class="mb-embed">
   <link rel="stylesheet" media="screen" href="https://cdn.mailblast.io/stylesheets/mb-embed-1-2.css">
+  <style type="text/css">
+    /* Add any css overrides you require here */
+  .mb-embed .mb-form-group .mb-subscribe {transition-timing-function: ease-out; background-color: #fddd52; text-align: left; height: auto; transition-duration: 0.3s; color: #2b2b2b; border-radius: 40px; font-size: 18px; padding-bottom: 15px; padding-left: 30px; padding-right: 30px; padding-top: 15px; border-collapse: collapse; margin-bottom: 50px; margin-left: 0px; margin-right: 0px; margin-top: 0px; top: -5px; line-height: 18px; display: inline-block;}
+  </style>
 
   <!-- You can customize the default success message here -->
-  <p class="mb-message mb-success-message" default-message="Thank you for subscribing!"></p>
-  <p class="mb-message mb-error-message"></p>
+  <h2 class="mb-message mb-success-message" default-message="Thank you for Subscribing!"></h2>
+  <h2 class="mb-message mb-error-message"></h2>
 
-  <form method="post" action="https://mailblast.io/lists/67b9711c-cef5-44ff-a206-7de050cbbe16/subscribers/create_external" class="form" novalidate="novalidate">
-    <div class="contact-tbl">
-    <table>
-      <tr>
-        <th>
-          Email Address (required):
-        </th>
-        <td colspan=2>
-          <input type="email" name="subscriber[email]" class="mb-email" required="" aria-required="true">
-        </td>
-      </tr>
+  <form method="post" action="https://mailblast.io/lists/67b9711c-cef5-44ff-a206-7de050cbbe16/subscribers/create_external" class="mb-form" novalidate="novalidate">
 
-      <tr>
-        <th>
-          First Name:
-        </th>
-        <td colspan=2>
-          <input type="text" name="subscriber[first_name]" class="mb-name mb-first-name">
-        </td>
-      </tr>
+    <div class="mb-form-group">
+      <label>Email Address (required)</label>
+      <input type="email" name="subscriber[email]" class="mb-email" required="" aria-required="true">
+    </div>
 
-      <tr>
-        <th>
-          Last Name:
-        </th>
-        <td colspan=2>
-          <input type="text" name="subscriber[last_name]" class="mb-name mb-last-name">
-        </td>
-      </tr>
+    <div class="mb-form-group">
+      <label class="mb-name">First Name</label>
+      <input type="text" name="subscriber[first_name]" class="mb-name mb-first-name">
+    </div>
 
-      <tr>
-        <td colspan=2>
-          <input type="text" name="mb_67b9711ccef544ffa2067de050cbbe16" tabindex="-1" value="">
-        </td>
-        <td>
-          <button type="submit" class="btn btn-send">Subscribe</button>
-        </td>
-      </tr>
-    </table>
+    <div class="mb-form-group">
+      <label class="mb-name">Last Name</label>
+      <input type="text" name="subscriber[last_name]" class="mb-name mb-last-name">
+    </div>
+
+    <div class="mb-form-group-tk" aria-hidden="true">
+      <input type="text" name="mb_67b9711ccef544ffa2067de050cbbe16" tabindex="-1" value="">
+    </div>
+
+    <div class="mb-form-group mb-subscribe">
+
+      <button type="submit" class="btn button mb-subscribe">Subscribe</button>
     </div>
   </form>
   <script src="https://cdn.mailblast.io/javascripts/mb-embed-1-2.js"></script>
-</ul>
+</div>
 <!--End Mailblast Signup Form-->
