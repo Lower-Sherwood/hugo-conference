@@ -386,6 +386,12 @@ nav {
   margin: 0 -20px 0;
 }
 
+/* Downloadable forms */
+.downloads {
+  padding: 19px;
+  margin: 0 -20px 0;
+}
+
 /* Contact */
 .contact {
   padding: 19px;
@@ -621,6 +627,9 @@ nav {
     box-sizing: border-box;
   }
   .about {
+    margin: 0;
+  }
+  .downloads{
     margin: 0;
   }
   .contact {
@@ -906,6 +915,12 @@ nav {
    ABOUT
    ========================================================================== */
 .about {
+  border: 1px solid #e7e7e7;
+  background: #fff;
+  border-radius: 4px;
+}
+/* Downloadable forms */
+.downloads {
   border: 1px solid #e7e7e7;
   background: #fff;
   border-radius: 4px;
