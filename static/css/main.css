@@ -513,15 +513,26 @@ nav {
 }
 
 /* =============================================================================
-   SCHEDULE
+   SCHEDULE & DOWNLOADS
    ========================================================================== */
+.downloads-tbl,
 .schedule-tbl {
   padding: 20px;
 }
+.downloads-tbl,
 .schedule-tbl table {
   border-collapse: collapse;
   font-size: 1em;
 }
+.downloads-tbl td,
+.downloads-tbl th {
+  position: relative;
+  padding: 20px 30px;
+  font-size: 1.4em;
+  line-height: 1.4em;
+  text-align: center;
+}
+
 .schedule-tbl td,
 .schedule-tbl th {
   position: relative;
@@ -530,6 +541,7 @@ nav {
   line-height: 1.4em;
   text-align: left;
 }
+.downloads-tbl th,
 .schedule-tbl th {
   padding: 5px 30px;
   color: #2b2b2b;
