@@ -11,16 +11,17 @@
 <script src="https://cdn.snipcart.com/scripts/2.0/snipcart.js" id="snipcart" data-api-key="{{ .Site.Params.SnipCartAPIKey }}" data-autopop="true"></script>
 
 <link href="https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css" type="text/css" rel="stylesheet" />
+<link href="/css/snipcart_overrides.css" type="text/css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
 {{ end }}
 {{ template "_internal/google_analytics_async.html" . }}
 
 <script id="cart-content-text" type="text/template">
-    <div class="custom-snipcart-footer-text">
-    <h2>Not finished adding items?</h2>
-    <p>You can check out now, or close this window to add more items.</p>
-    </div>
-  </script>
+  <div class="custom-snipcart-footer-text">
+  <h2>Not finished adding items?</h2>
+  <p>You can check out now, or close this window to add more items.</p>
+  </div>
+</script>
 
 <script>
 // Show the 'continue shopping' button
@@ -32,6 +33,11 @@ Snipcart.execute('bind', 'cart.opened', function() {
     
     var html = $("#cart-content-text").html();
     $(html).insertBefore($("#snipcart-footer"));
+Snipcart.api.configure('credit_cards', [
+      {'type': 'visa', 'display': 'Visa'},
+        {'type': 'mastercard', 'display': 'Mastercard'},
+        {'type': 'amex', 'display': 'American Express'}
+        ]);
 });
 
 
