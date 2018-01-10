@@ -23,13 +23,18 @@
   </script>
 
 <script>
+// Show the 'continue shopping' button
 Snipcart.execute('config', 'show_continue_shopping', true);
+
+// add the custom-snipcart-footer-text
 Snipcart.execute('bind', 'cart.opened', function() {
     Snipcart.execute('unbind', 'cart.opened');
     
     var html = $("#cart-content-text").html();
     $(html).insertBefore($("#snipcart-footer"));
 });
+
+
 </script>
 </body>
 </html>
