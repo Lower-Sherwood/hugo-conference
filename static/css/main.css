@@ -308,6 +308,7 @@ p {
   line-height: 1.6em;
   margin-bottom: 1.4em;
 }
+
 .photo {
   max-width: 100%;
   position: relative;
@@ -385,6 +386,12 @@ nav {
   margin: 0 -20px 0;
 }
 
+/* Downloadable forms */
+.downloads {
+  padding: 19px;
+  margin: 0 -20px 0;
+}
+
 /* Contact */
 .contact {
   padding: 19px;
@@ -404,9 +411,28 @@ nav {
 }
 
 /* Register */
-.register {
+.register,
+.registration {
   padding: 19px;
   margin: 0 -20px 0;
+}
+
+.register-photo,
+.registration-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 120px;
+  height: 120px;
+}
+
+.registration-item {
+  position: relative;
+  min-height: 180px;
+  padding-left: 180px;
+  margin-bottom: 30px;
+  border-bottom: 1px dashed #e7e7e7;
 }
 
 /* =============================================================================
@@ -445,6 +471,11 @@ nav {
 }
 
 /* registration table */
+.registration-text p {
+  font-size: 1.4em;
+  margin-bottom: 0.25em;
+}
+
 .registraton-tbl {
   padding: 20px;
 }
@@ -470,6 +501,15 @@ nav {
   color: #2b2b2b;
   font-size: 1.8em;
   font-weight: bold;
+}
+
+.register-tbl .register-photo,
+.registration-tbl .registration-photo {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  float: left;
+  margin-right: 20px;
 }
 
 /* =============================================================================
@@ -589,6 +629,9 @@ nav {
   .about {
     margin: 0;
   }
+  .downloads{
+    margin: 0;
+  }
   .contact {
     margin: 0;
   }
@@ -600,6 +643,13 @@ nav {
   }
   .register {
     margin: 0;
+  }
+  .registration {
+    margin: 0;
+  }
+  .registration-text p {
+    font-size: 1.4em;  
+    margin-bottom: 0.25em; 
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 800px) {
@@ -636,22 +686,6 @@ nav {
     font-size: 12px;
   }
 
-  /* registration */
-  .registration-tbl,
-  .contact-tbl {
-    padding: 1px;
-  }
-  .registration-tbl td,
-  .registration-tbl th,
-  .contact-tbl td,
-  .contact-tbl th{
-    padding: 10px;
-  }
-  .registration-tbl th,
-  .contact-tbl th {
-    padding: 10px;
-    font-size: 1.8em;
-  }
   /* partners */
   .sponsor-item,
   .partner-item {
@@ -672,7 +706,8 @@ nav {
     margin-right: 0;
   }
   .form .btn {
-    margin-bottom: 50px;
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -741,24 +776,36 @@ nav {
   .speakers-bio {
     display: none;
   }
+  
+   .schedule-tbl td.schedule-description {
+     font-size: 12px;
+   }
+ 
 }
 @media only screen and (max-width: 321px) {
   .logo-name {
     font-size: 4em;
     margin-bottom: .4em;
   }
-  .schedule-tbl .schedule-description {
+  .schedule-tbl .schedule-description,
+  .registration-list .registration-item{
     display: none;
   }
+  .registration-text p {
+    font-size: 1.4em;
+    margin-bottom: 0.25em;
+  }
+
   .schedule-tbl .schedule-slot {
     width: auto;
   }
   /* partners */
   .sponsor-item,
-  .partner-item {
+  .partner-item,
+  .registration-item {
     margin: 0 12px 15px 0;
   }
-  .sponsor--link,
+  .sponsor-link,
   .partner-link {
     width: 115px;
     height: 115px;
@@ -858,7 +905,8 @@ nav {
   text-decoration: underline;
 }
 /* Register */
-.register {
+.register,
+.registration {
   border: 1px solid #e7e7e7;
   background: #fff;
   border-radius: 4px;
@@ -867,6 +915,12 @@ nav {
    ABOUT
    ========================================================================== */
 .about {
+  border: 1px solid #e7e7e7;
+  background: #fff;
+  border-radius: 4px;
+}
+/* Downloadable forms */
+.downloads {
   border: 1px solid #e7e7e7;
   background: #fff;
   border-radius: 4px;
@@ -888,7 +942,9 @@ nav {
 /* =============================================================================
    SPEAKER
    ========================================================================== */
-.speaker-photo .photo {
+.speaker-photo .photo,
+.register-photo .photo,
+.registration-photo .photo {
   border-radius: 50%;
   box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.07);
   -webkit-transition: all 0.3s ease-out;
@@ -897,7 +953,9 @@ nav {
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-.speakers-item:hover .speaker-photo .photo {
+.speakers-item:hover .speaker-photo .photo, 
+.register-item:hover .register-photo .photo,
+.registration-item:hover .registration-photo .photo {
   box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.3);
 }
 .speech-time {
@@ -974,6 +1032,10 @@ nav {
 .schedule-tbl .speaker-photo .photo {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
 }
+.register-tbl .register-photo .photo,
+.registration-tbl .registration-photo .photo {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
+} 
 .speakers-company {
   color: #999;
 }
@@ -1039,6 +1101,23 @@ nav {
   .speaker-photo .photo {
     box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.07);
   }
+  .schedule-tbl td.schedule-description {
+    font-size: 12px;
+  }
+
+  .schedule-tbl td.schedule-description {
+    font-size: 12px;
+  }
+
+  .contact-tbl td,
+  .contact-tbl th{
+    padding: 10px;
+  }
+  .contact-tbl th {
+    padding: 10px;
+    font-size: 1.8em;
+  }
+
   .speech-title {
     font-weight: bolder;
   }
@@ -1050,4 +1129,16 @@ nav {
   .github-link {
     display: none;
   }
+}
+
+/* Cart Customizations */
+#snipcart-main-content .custom-snipcart-footer-text {
+  background-color: rgba(240,240,240,1);
+  padding: 10px 20px;
+}
+
+#snipcart-main-content .custom-snipcart-footer-text h2 {
+  font-size: larger;
+  font-weight: bold;
+  padding: 10px 0;
 }
