@@ -8,11 +8,28 @@
 {{ end }}
 
 {{ if isset .Site.Params "snipcartapikey" }}
-<script src="https://cdn.snipcart.com/scripts/2.0/snipcart.js" id="snipcart" data-api-key="{{ .Site.Params.SnipCartAPIKey }}" data-autopop="false" data-cart-custom1-name="ILR Number"></script>
+<script src="https://cdn.snipcart.com/scripts/2.0/snipcart.js" id="snipcart" data-api-key="{{ .Site.Params.SnipCartAPIKey }}" data-autopop="true"></script>
 
 <link href="https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css" type="text/css" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
 {{ end }}
 {{ template "_internal/google_analytics_async.html" . }}
+
+<script id="cart-content-text" type="text/template">
+    <div class="custom-snipcart-footer-text">
+    <h2>Not finished adding items?</h2>
+    <p>You can check out now, or close this window to add more items.</p>
+    </div>
+  </script>
+
+<script>
+Snipcart.execute('config', 'show_continue_shopping', true);
+Snipcart.execute('bind', 'cart.opened', function() {
+    Snipcart.execute('unbind', 'cart.opened');
+    
+    var html = $("#cart-content-text").html();
+    $(html).insertBefore($("#snipcart-footer"));
+});
+</script>
 </body>
 </html>
