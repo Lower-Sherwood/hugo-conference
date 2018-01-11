@@ -1,4 +1,5 @@
 /* =============================================================================
+ * vertical-align: top;
    RESET
    ========================================================================== */
 * {
@@ -308,6 +309,9 @@ p {
   line-height: 1.6em;
   margin-bottom: 1.4em;
 }
+.sponsors-tbl p {
+  margin-bottom: auto;
+}
 
 .photo {
   max-width: 100%;
@@ -441,6 +445,25 @@ nav {
   border-bottom: 1px dashed #e7e7e7;
 }
 
+.sponsors-photo {
+  top: 0;
+  width: auto;
+  height: auto;
+  max-width: 150px;
+  max-height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: top;
+}
+
+.sponsors-item {
+  position: left;
+  min-height: 180px;
+  padding-left: 180px;
+  margin-bottom: 30px;
+  border-bottom: 1px dashed #e7e7e7;
+}
+
 /* =============================================================================
    SPEAKER
    ========================================================================== */
@@ -519,17 +542,28 @@ nav {
 }
 
 /* =============================================================================
-   SCHEDULE & DOWNLOADS
+   SCHEDULE, SPONSOR  & DOWNLOADS
    ========================================================================== */
+.sponsors-tbl,
 .downloads-tbl,
 .schedule-tbl {
   padding: 20px;
 }
+.sponsors-tbl,
 .downloads-tbl,
 .schedule-tbl table {
   border-collapse: collapse;
   font-size: 1em;
 }
+.sponsors-tbl td,
+.sponsors-tbl th {
+  position: relative;
+  font-size: 1.4em;
+  line-height: 1.4em;
+  text-align: center;
+  vertical-align: bottom; 
+}
+
 .downloads-tbl td,
 .downloads-tbl th {
   position: relative;
@@ -547,6 +581,7 @@ nav {
   line-height: 1.4em;
   text-align: left;
 }
+.sponsors-tbl th,
 .downloads-tbl th,
 .schedule-tbl th {
   padding: 5px 30px;
@@ -575,12 +610,11 @@ nav {
 /* =============================================================================
    SPONSORS  and  PARTNERS
    ========================================================================== */
-.sponsor-item,
+.sponsors-item,
 .partner-item {
   display: inline-block;
   margin: 0 30px 30px 0;
 }
-.sponsor-link,
 .partner-link {
   display: block;
   width: 150px;
@@ -709,11 +743,11 @@ nav {
   }
 
   /* partners */
-  .sponsor-item,
+  .sponsors-item,
   .partner-item {
     margin: 0 5px 10px 0;
   }
-  .sponsor-link,
+  .sponsors-link,
   .partner-link {
     width: 95px;
     height: 95px;
@@ -810,7 +844,7 @@ nav {
     margin-bottom: .4em;
   }
   .schedule-tbl .schedule-description,
-  .sponsor-list, .sponsor-item,
+  .sponsors-list, .sponsors-item,
   .registration-list .registration-item {
     display: none;
   }
@@ -823,12 +857,12 @@ nav {
     width: auto;
   }
   /* partners */
-  .sponsor-item,
+  .sponsors-item,
   .partner-item,
   .registration-item {
     margin: 0 12px 15px 0;
   }
-  .sponsor-link,
+  .sponsors-link,
   .partner-link {
     width: 115px;
     height: 115px;
@@ -971,7 +1005,6 @@ nav {
 /* =============================================================================
    SPEAKER
    ========================================================================== */
-.sponsor-item .photo,
 .speaker-photo .photo,
 .register-photo .photo,
 .registration-photo .photo {
@@ -985,7 +1018,6 @@ nav {
 }
 .speakers-item:hover .speaker-photo .photo, 
 .register-item:hover .register-photo .photo,
-.sponsor-item:hover .sponsor-link .photo,
 .registration-item:hover .registration-photo .photo {
   box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.3);
 }
@@ -1086,14 +1118,11 @@ nav {
 /* =============================================================================
    SPONSORS
    ========================================================================== */
-.sponsor-link,
 .partner-link {
   background: #fff;
   border: 1px solid #ccc;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15);
 }
-.sponsor-link:hover,
-.sponsor-link:focus,
 .partner-link:hover,
 .partner-link:focus {
   border-color: #f0a303;

@@ -1,13 +1,15 @@
 <h2 class="section-title">{{ .titles.sponsors }}</h2>
 
-<ul class="sponsor-list">
-  <table class=>
-    <tr>
-    {{ range $sponsor := .sponsors }}
-    <td>
-        <p><a href="{{ .url }}" target="_blank" class="sponsor-link" itemprop="url"><img src="{{ .logo }}" alt="{{ .name }}" class="photo" itemprop="image"></a><br>{{ .name }}</p>
-    </td>
-    {{ end }}
-</tr>
-</table>
-</ul>
+  <ul class="sponsors-tbl">
+
+    <table>
+      <tr>
+      {{ range $sponsor := .sponsors }}
+        <td>
+          <p><a href="{{ .url }}" target="_blank" class="sponsors-link" itemprop="url"><img src="{{ .logo }}" alt="{{ .name }}" class="sponsors-photo" itemprop="image"></a><br>{{ .name }}</p>
+        </td>
+      {{ end }}
+    </tr>
+    </table>
+  </ul>
+
