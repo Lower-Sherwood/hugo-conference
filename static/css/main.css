@@ -410,6 +410,12 @@ nav {
   margin: 0 -20px 0;
 }
 
+/* sponsors */
+.sponsors {
+  padding: 19px;
+  margin: 0 -20px 0;
+}
+
 /* Register */
 .register,
 .registration {
@@ -574,7 +580,7 @@ nav {
   display: inline-block;
   margin: 0 30px 30px 0;
 }
-.sponsor--link,
+.sponsor-link,
 .partner-link {
   display: block;
   width: 150px;
@@ -584,7 +590,7 @@ nav {
   line-height: 150px;
 }
 /* =============================================================================
-   CONTATO
+   CONTACT
    ========================================================================== */
 .form label {
   font-size: 16px;
@@ -640,6 +646,9 @@ nav {
     box-sizing: border-box;
   }
   .about {
+    margin: 0;
+  }
+  .sponsors {
     margin: 0;
   }
   .downloads{
@@ -704,7 +713,7 @@ nav {
   .partner-item {
     margin: 0 5px 10px 0;
   }
-  .sponsor--link,
+  .sponsor-link,
   .partner-link {
     width: 95px;
     height: 95px;
@@ -801,7 +810,8 @@ nav {
     margin-bottom: .4em;
   }
   .schedule-tbl .schedule-description,
-  .registration-list .registration-item{
+  .sponsor-list, .sponsor-item,
+  .registration-list .registration-item {
     display: none;
   }
   .registration-text p {
@@ -932,6 +942,12 @@ nav {
   background: #fff;
   border-radius: 4px;
 }
+/* sponsors */
+.sponsors {
+  border: 1px solid #e7e7e7;
+  background: #fff;
+  border-radius: 4px;
+}
 /* Downloadable forms */
 .downloads {
   border: 1px solid #e7e7e7;
@@ -955,6 +971,7 @@ nav {
 /* =============================================================================
    SPEAKER
    ========================================================================== */
+.sponsor-item .photo,
 .speaker-photo .photo,
 .register-photo .photo,
 .registration-photo .photo {
@@ -968,6 +985,7 @@ nav {
 }
 .speakers-item:hover .speaker-photo .photo, 
 .register-item:hover .register-photo .photo,
+.sponsor-item:hover .sponsor-link .photo,
 .registration-item:hover .registration-photo .photo {
   box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.3);
 }
@@ -1014,6 +1032,7 @@ nav {
 .contact-tbl tbody tr:hover {
   background: #fffde1;
 }
+
 
 /* =============================================================================
    SCHEDULE
@@ -1067,14 +1086,14 @@ nav {
 /* =============================================================================
    SPONSORS
    ========================================================================== */
-.sponsor--link,
+.sponsor-link,
 .partner-link {
   background: #fff;
   border: 1px solid #ccc;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15);
 }
-.sponsor--link:hover,
-.sponsor--link:focus,
+.sponsor-link:hover,
+.sponsor-link:focus,
 .partner-link:hover,
 .partner-link:focus {
   border-color: #f0a303;
