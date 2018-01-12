@@ -1,6 +1,6 @@
 function initialize() {
   initMap();
-  initAutocomplete();
+  //initAutocomplete();
 }
 
 function initMap() {
