@@ -238,6 +238,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
+  table-layout: fixed;
 }
 td {
   vertical-align: middle;
@@ -554,6 +555,7 @@ nav {
 .schedule-tbl {
   padding: 20px;
 }
+
 .sponsors-tbl,
 .downloads-tbl,
 .schedule-tbl table {
@@ -572,8 +574,8 @@ nav {
 .downloads-tbl td,
 .downloads-tbl th {
   position: relative;
-  padding: 20px 30px;
-  font-size: 1.4em;
+  padding: 5px 5px;
+  font-size: 1.2em;
   line-height: 1.4em;
   text-align: center;
 }
