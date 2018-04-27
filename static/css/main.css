@@ -311,8 +311,9 @@ p {
   margin-bottom: 1.4em;
 }
 .sponsors-tbl p {
-  margin-bottom: auto;
+  margin-bottom: 2em;
 }
+
 
 .photo {
   max-width: 100%;
@@ -425,6 +426,7 @@ nav {
   padding: 19px;
   margin: 0 -20px 0;
 }
+
 
 /* Register */
 .register,
@@ -614,6 +616,18 @@ nav {
   display: block;
   font-size: 12px;
 }
+
+/*
+#sponsors_table{
+  display: block;
+}
+
+#sponsors_table td{
+  display: inline-block;
+}
+
+*/
+
 /* =============================================================================
    SPONSORS  and  PARTNERS
    ========================================================================== */
