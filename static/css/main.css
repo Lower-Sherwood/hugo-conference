@@ -9,6 +9,11 @@
   border: 0;
   text-decoration: none;
 }
+
+.expandable {
+    display:none;
+}
+
 img,
 input,
 label {
@@ -22,6 +27,7 @@ h5,
 h6 {
   font-size: 100%;
   line-height: 1em;
+
 }
 article,
 aside,
@@ -285,9 +291,9 @@ hr {
 .content {
   padding: 50px 0;
 }
-.content section {
+/*.content section {
   padding-top: 50px;
-}
+}*/
 /* =============================================================================
    BASIC STYLES
    ========================================================================== */
@@ -297,6 +303,7 @@ h4 {
   font-size: 5em;
   font-weight: normal;
   margin-bottom: .4em;
+  margin-top: .6em;
   letter-spacing: -0.02em;
 }
 h3 {
@@ -393,6 +400,11 @@ nav {
    ABOUT
    ========================================================================== */
 .about {
+  padding: 19px;
+  margin: 0 -20px 0;
+}
+
+.results {
   padding: 19px;
   margin: 0 -20px 0;
 }
@@ -519,7 +531,7 @@ nav {
 
 .registration-tbl table,
 .contact-tbl table {
-  border-collapse: collapse; 
+  border-collapse: collapse;
   font-size: 1em;
 }
 .registration-tbl td,
@@ -554,13 +566,15 @@ nav {
    ========================================================================== */
 .sponsors-tbl,
 .downloads-tbl,
-.schedule-tbl {
+.schedule-tbl,
+.results-tbl {
   padding: 20px;
 }
 
 .sponsors-tbl,
 .downloads-tbl,
-.schedule-tbl table {
+.schedule-tbl,
+.results-tbl table {
   border-collapse: collapse;
   font-size: 1em;
 }
@@ -570,11 +584,20 @@ nav {
   font-size: 1.4em;
   line-height: 1.4em;
   text-align: center;
-  vertical-align: bottom; 
+  vertical-align: bottom;
 }
 
 .downloads-tbl td,
 .downloads-tbl th {
+  position: relative;
+  padding: 5px 5px;
+  font-size: 1.2em;
+  line-height: 1.4em;
+  text-align: center;
+}
+
+.results-tbl td,
+.results-tbl th {
   position: relative;
   padding: 5px 5px;
   font-size: 1.2em;
@@ -592,7 +615,8 @@ nav {
 }
 .sponsors-tbl th,
 .downloads-tbl th,
-.schedule-tbl th {
+.schedule-tbl,
+.results-tbl th {
   padding: 5px 30px;
   color: #2b2b2b;
   font-size: 2em;
@@ -703,6 +727,9 @@ nav {
   .about {
     margin: 0;
   }
+  .results {
+    margin: 0;
+  }
   .sponsors {
     margin: 0;
   }
@@ -725,13 +752,25 @@ nav {
     margin: 0;
   }
   .registration-text p {
-    font-size: 1.4em;  
-    margin-bottom: 0.25em; 
+    font-size: 1.4em;
+    margin-bottom: 0.25em;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 800px) {
+  /* results */
+  .results-tbl, {
+    padding: 1px;
+  }
+  .results-tbl td,
+  .results-tbl th {
+    padding: 10px;
+  }
+  .results-tbl th {
+    padding: 10px;
+    font-size: 1.8em;
+  }
   /* schedule */
-  .schedule-tbl {
+  .schedule-tbl, {
     padding: 1px;
   }
   .schedule-tbl td,
@@ -853,11 +892,11 @@ nav {
   .speakers-bio {
     display: none;
   }
-  
+
    .schedule-tbl td.schedule-description {
      font-size: 12px;
    }
- 
+
 }
 @media only screen and (max-width: 321px) {
   .logo-name {
@@ -997,6 +1036,11 @@ nav {
   background: #fff;
   border-radius: 4px;
 }
+.results {
+  border: 1px solid #e7e7e7;
+  background: #fff;
+  border-radius: 4px;
+}
 /* sponsors */
 .sponsors {
   border: 1px solid #e7e7e7;
@@ -1005,6 +1049,14 @@ nav {
 }
 /* Downloadable forms */
 .downloads {
+  border: 1px solid #e7e7e7;
+  background: #fff;
+  border-radius: 4px;
+}
+/* =============================================================================
+   RESULTS
+   ========================================================================== */
+.results {
   border: 1px solid #e7e7e7;
   background: #fff;
   border-radius: 4px;
@@ -1037,7 +1089,7 @@ nav {
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-.speakers-item:hover .speaker-photo .photo, 
+.speakers-item:hover .speaker-photo .photo,
 .register-item:hover .register-photo .photo,
 .registration-item:hover .registration-photo .photo {
   box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.3);
@@ -1081,7 +1133,7 @@ nav {
 .contact-tbl th {
   color: #2b2b2b;
 }
-.registration-tbl tbody tr:hover, 
+.registration-tbl tbody tr:hover,
 .contact-tbl tbody tr:hover {
   background: #fffde1;
 }
@@ -1117,10 +1169,33 @@ nav {
 .schedule-tbl .speaker-photo .photo {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
 }
+.results-tbl {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15);
+}
+.results-tbl table {
+  background: #fff;
+}
+.results-tbl td,
+.results-tbl th {
+  border-bottom: 1px solid #e7e7e7;
+}
+.results-tbl tbody tr:nth-child(2n+1) {
+  background: #f6f6f6;
+}
+.results-tbl th {
+  color: #2b2b2b;
+}
+.results-tbl .speaker-photo .photo {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
+}
+
 .register-tbl .register-photo .photo,
 .registration-tbl .registration-photo .photo {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
-} 
+}
 .speakers-company {
   color: #999;
 }
@@ -1128,6 +1203,9 @@ nav {
   color: #2b2b2b;
 }
 .schedule-tbl tbody tr:hover {
+  background: #fffde1;
+}
+.results-tbl tbody tr:hover {
   background: #fffde1;
 }
 .schedule-coffee,
