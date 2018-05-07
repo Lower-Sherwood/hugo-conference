@@ -10,6 +10,14 @@
   text-decoration: none;
 }
 
+th[data-sort]{
+      cursor:pointer;
+}
+
+.expand {
+  cursor:pointer;
+}
+
 .expandable {
     display:none;
 }
