@@ -608,22 +608,37 @@ nav {
 .results-tbl th {
   position: relative;
   padding: 5px 5px;
-  font-size: 1.2em;
+  font-size: 0.8em;
   line-height: 1.4em;
   text-align: center;
 }
 
-.schedule-tbl td,
 .schedule-tbl th {
   position: relative;
-  padding: 20px 30px;
-  font-size: 1.4em;
+  padding: 10px 20px;
+  font-size: 1.0em;
   line-height: 1.4em;
   text-align: left;
+  font-weight: bolder;
 }
+
+.schedule-tbl td {
+  position: relative;
+  padding: 10px 20px;
+  font-size: 1.0em;
+  line-height: 1.4em;
+  text-align: left;
+  font-weight: normal;
+}
+
+.schedule-tbl {
+  padding: 5px 30px;
+  color: #2b2b2b;
+  font-size: 2em;
+}
+
 .sponsors-tbl th,
 .downloads-tbl th,
-.schedule-tbl,
 .results-tbl th {
   padding: 5px 30px;
   color: #2b2b2b;
@@ -787,7 +802,7 @@ nav {
   }
   .schedule-tbl th {
     padding: 10px;
-    font-size: 1.8em;
+    font-size: 12px;
   }
   .schedule-tbl .speaker-photo {
     width: 40px;
@@ -805,10 +820,12 @@ nav {
     width: 60px;
     padding: 10px 0 10px 5px;
     text-align: left;
+    font-size: 12px;
   }
   .schedule-tbl td.schedule-description {
     font-size: 12px;
   }
+
 
   /* partners */
   .sponsors-item,
@@ -877,7 +894,7 @@ nav {
     padding: 0;
   }
   .content section {
-    padding-top: 50px;
+    padding-top: 19px;
   }
   /* speakers */
   .speakers-item {
