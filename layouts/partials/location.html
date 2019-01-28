@@ -8,4 +8,15 @@
 
 <div id="map-canvas" class="location-area" data-address="{{ .address }}, {{ .city }} - {{ .state }}"></div>
 <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key={{ .Site.Params.GoogleMapsAPIKey }}&callback=initMap"></script>-->
+
+{{ if isset . "airbnbevent" }}
+  <br>
+  <ul>
+    <p>
+      Need somewhere to stay? Try <a href={{ printf "https://www.airbnb.com/events/%s" (.airbnbevent) }} name="Airbnb link" itemprop="url" target="_blank">Airbnb</a>.
+    </p>
+  </ul>
+{{ end }}
+
+
 </div>
