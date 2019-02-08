@@ -1,0 +1,23 @@
+<h2 class="section-title">{{ .titles.vendors }}</h2>
+
+  <ul class="vendors-tbl">
+    <table>
+      {{ range $vendor := .vendors }}
+      <tr>
+       {{ range $row := .row }}
+        <td>
+          {{ if  .logo }}
+            <p><a href="{{ .url }}" target="_blank" class="vendors-link" itemprop="url"><img src="{{ .logo }}" alt="{{ .name }}" class="vendors-photo" itemprop="image"></a><br><a href="{{ .url }}" target="_blank" class="vendors-link" itemprop="url">{{- .name -}}</a></p>
+          {{ else if .url }}
+            <p><a href="{{ .url }}" target="_blank" class="vendors-link" itemprop="url">{{- .name -}}</a></p>
+          {{ else }}
+
+            <p>{{ .name }}</p>
+          {{ end }}
+        </td>
+        {{ end }}
+      </tr>
+      {{ end }}
+    </table>
+  </ul>
+

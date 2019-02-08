@@ -329,6 +329,9 @@ p {
   margin-bottom: 2em;
 }
 
+.vendors-tbl p {
+  margin-bottom: 2em;
+}
 
 .photo {
   max-width: 100%;
@@ -412,6 +415,16 @@ nav {
   margin: 0 -20px 0;
 }
 
+.vendors {
+  padding: 19px;
+  margin: 0 -20px 0;
+}
+
+.partners {
+  padding: 19px;
+  margin: 0 -20px 0;
+}
+
 .results {
   padding: 19px;
   margin: 0 -20px 0;
@@ -473,7 +486,8 @@ nav {
   border-bottom: 1px dashed #e7e7e7;
 }
 
-.sponsors-photo {
+.sponsors-photo,
+.vendors-photo {
   top: 0;
   width: auto;
   height: auto;
@@ -484,7 +498,27 @@ nav {
   vertical-align: top;
 }
 
-.sponsors-item {
+.sponsors-item,
+.vendors-item {
+  position: left;
+  min-height: 180px;
+  padding-left: 180px;
+  margin-bottom: 30px;
+  border-bottom: 1px dashed #e7e7e7;
+}
+
+.vendors-photo {
+  top: 0;
+  width: auto;
+  height: auto;
+  max-width: 150px;
+  max-height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: top;
+}
+
+.vendors-item {
   position: left;
   min-height: 180px;
   padding-left: 180px;
@@ -570,9 +604,10 @@ nav {
 }
 
 /* =============================================================================
-   SCHEDULE, SPONSOR  & DOWNLOADS
+   SCHEDULE, SPONSOR, VENDORS  & DOWNLOADS
    ========================================================================== */
 .sponsors-tbl,
+.vendors-tbl,
 .downloads-tbl,
 .schedule-tbl,
 .results-tbl {
@@ -580,6 +615,7 @@ nav {
 }
 
 .sponsors-tbl,
+.vendors-tbl,
 .downloads-tbl,
 .schedule-tbl,
 .results-tbl table {
@@ -587,7 +623,9 @@ nav {
   font-size: 1em;
 }
 .sponsors-tbl td,
-.sponsors-tbl th {
+.sponsors-tbl th,
+.vendors-tbl td,
+.vendors-tbl th {
   position: relative;
   font-size: 1.4em;
   line-height: 1.4em;
@@ -639,13 +677,14 @@ nav {
 
 .sponsors-tbl th,
 .downloads-tbl th,
-.results-tbl th {
+.results-tbl th,
+.vendors-tbl th, {
   padding: 5px 30px;
   color: #2b2b2b;
   font-size: 2em;
   font-weight: bolder;
 }
-.schedule-tbl .speaker-photo {
+.schedule-tbl .speaker-photo .vendor-photo {
   position: relative;
   width: 40px;
   height: 40px;
@@ -679,11 +718,12 @@ nav {
    SPONSORS  and  PARTNERS
    ========================================================================== */
 .sponsors-item,
-.partner-item {
+.partners-item,
+.vendors-item {
   display: inline-block;
   margin: 0 30px 30px 0;
 }
-.partner-link {
+.partners-link {
   display: block;
   width: 150px;
   height: 150px;
@@ -748,6 +788,12 @@ nav {
     box-sizing: border-box;
   }
   .about {
+    margin: 0;
+  }
+  .vendors {
+    margin: 0;
+  }
+  .partners {
     margin: 0;
   }
   .results {
@@ -829,11 +875,13 @@ nav {
 
   /* partners */
   .sponsors-item,
-  .partner-item {
+  .partners-item,
+  .vendors-item {
     margin: 0 5px 10px 0;
   }
   .sponsors-link,
-  .partner-link {
+  .partners-link,
+  .vendors-link, {
     width: 95px;
     height: 95px;
     line-height: 95px;
@@ -930,6 +978,7 @@ nav {
   }
   .schedule-tbl .schedule-description,
   .sponsors-list, .sponsors-item,
+  .vendors-list, .vendors-item,
   .registration-list .registration-item {
     display: none;
   }
@@ -943,12 +992,14 @@ nav {
   }
   /* partners */
   .sponsors-item,
-  .partner-item,
+  .partners-item,
+  .vendors-item,
   .registration-item {
     margin: 0 12px 15px 0;
   }
   .sponsors-link,
-  .partner-link {
+  .partners-link,
+  .vendors-link {
     width: 115px;
     height: 115px;
     line-height: 115px;
@@ -1056,6 +1107,16 @@ nav {
    ABOUT
    ========================================================================== */
 .about {
+  border: 1px solid #e7e7e7;
+  background: #fff;
+  border-radius: 4px;
+}
+.vendors {
+  border: 1px solid #e7e7e7;
+  background: #fff;
+  border-radius: 4px;
+}
+.partners {
   border: 1px solid #e7e7e7;
   background: #fff;
   border-radius: 4px;
@@ -1241,15 +1302,16 @@ nav {
 /* =============================================================================
    SPONSORS
    ========================================================================== */
-.partner-link {
+.partners-link {
   background: #fff;
   border: 1px solid #ccc;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15);
 }
-.partner-link:hover,
-.partner-link:focus {
+.partners-link:hover,
+.partners-link:focus {
   border-color: #f0a303;
 }
+
 /* =============================================================================
    CONTACT
    ========================================================================== */
