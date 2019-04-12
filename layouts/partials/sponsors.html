@@ -1,23 +1,24 @@
 <h2 class="section-title">{{ .titles.sponsors }}</h2>
-
-  <ul class="sponsors-tbl">
-    <table>
-      {{ range $sponsor := .sponsors }}
-      <tr>
-       {{ range $row := .row }}
-        <td>
-          {{ if  .logo }}
-            <p><a href="{{ .url }}" target="_blank" class="sponsors-link" itemprop="url"><img src="{{ .logo }}" alt="{{ .name }}" class="sponsors-photo" itemprop="image"></a><br><a href="{{ .url }}" target="_blank" class="sponsors-link" itemprop="url">{{- .name -}}</a></p>
-          {{ else if .url }}
-            <p><a href="{{ .url }}" target="_blank" class="sponsors-link" itemprop="url">{{- .name -}}</a></p>
-          {{ else }}
-     
-            <p>{{ .name }}</p>
-          {{ end }}
-        </td>
+<ul class="sponsors-tbl">
+{{ range $sponsor := .sponsors }}
+  <h3 class="section-title">{{ .level }}</h3>
+  <table>
+    <tr>
+      {{ range $i, $e := .sponsors }}
+        {{ if (and (modBool $i 3) (gt $i 0))}}
+          </tr><tr>
         {{ end }}
-      </tr>
+        <td>
+        {{ if $e.logo }}
+          <p><a href="{{ .url }}" target="_blank" class="sponsors-link" itemprop="url"><img src="{{ .logo }}" alt="{{ .name }}" class="sponsors-photo" itemprop="image"></a><br><a href="{{ .url }}" target="_blank" class="sponsors-link" itemprop="url">{{- .name -}}</a></p>
+        {{ else if $e.url }}
+          <p><a href="{{ .url }}" target="_blank" class="sponsors-link" itemprop="url">{{- .name -}}</a></p>
+        {{ else }}
+          <p>{{ $e.name }}</p>
+        {{ end }}
+        </td>
       {{ end }}
-    </table>
-  </ul>
-
+    </tr>
+  </table>
+{{ end }}
+</ul>
