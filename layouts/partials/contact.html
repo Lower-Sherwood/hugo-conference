@@ -1,9 +1,9 @@
 <h2 class="section-title">{{ .titles.contact }}</h2>
 
 <ul class="contact-list">
-    {{ range $contact_text := .contact }}
+    {{ range .contact }}
     <p>
-      {{ .text }}
+      {{ . }}
     </p>
     {{ end }}
 

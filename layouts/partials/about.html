@@ -1,9 +1,9 @@
 <h2 class="section-title">{{ .titles.about }}</h2>
 
 <ul class="about-list">
-    {{ range $about_text := .about }}
+    {{ range .about }}
     <p>
-      {{ .text }}
+      {{ . }}
     </p>
     {{ end }}
 </ul>
