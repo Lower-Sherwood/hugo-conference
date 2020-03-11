@@ -13,8 +13,7 @@
   {{ template "_internal/opengraph.html" . }}
   {{ template "_internal/twitter_cards.html" . }}
 
-  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  {{ partial "favicons.html" . }}
 
   <link rel="stylesheet" type="text/css" href="/css/main.css">
   <link rel="stylesheet" type="text/css" href="/css/form.css">
