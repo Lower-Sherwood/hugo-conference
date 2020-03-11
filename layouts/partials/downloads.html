@@ -2,18 +2,20 @@
 
 <ul class="downloads-tbl">
   {{ range $items := .downloads }}
-    {{ range $text := .text }}
-      <p>
-        {{ .text }}
-      </p>
-    {{ end }}
+    {{ range $section := .section }}
+      {{ range $text := .text }}
+        <p>
+          {{ .text }}
+        </p>
+      {{ end }}
 
-    <table>
-    <tr>
-    {{ range $downloads := .downloads }}
-    <td>
-        <p><a href="{{ .filename }}" target="_blank"><i class="fa fa-file-{{ .icon }}-o fa-3x" aria-hidden="true" style="vertical-align: middle;"></i></a><br>{{ .displaytext }}</p>
-    </td>
+      <table>
+      <tr>
+      {{ range $downloads := .downloads }}
+      <td>
+          <p><a href="{{ .filename }}" target="_blank"><i class="fa fa-file-{{ .icon }}-o fa-3x" aria-hidden="true" style="vertical-align: middle;"></i></a><br>{{ .displaytext }}</p>
+      </td>
+      {{ end }}
     {{ end }}
 </tr>
 </table>

@@ -640,6 +640,7 @@ nav {
   font-size: 1.2em;
   line-height: 1.4em;
   text-align: center;
+  vertical-align: super;
 }
 
 .results-tbl td,
