@@ -1,5 +1,8 @@
 <h2 class="section-title">{{ .titles.location }}</h2>
 
+<p>
+<p itemprop="location" itemscope itemtype="https://schema.org/Place">
+<span itemprop="name">{{ .venue}}</span></p>
 <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
   <span itemprop="streetAddress">{{ .address }}. </span>
   <span itemprop="addressLocality">{{ .city }}</span>,
