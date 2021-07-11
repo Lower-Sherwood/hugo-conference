@@ -7,12 +7,16 @@
 <header class="header">
   <div class="wrapper">
     <h1 class="logo-name">
-        <a class="logo-link" href="/" title="{{ .name }}" itemprop="name">{{ .shortname }}</a><br>
+        <a class="logo-link" href="/" title="{{ .shortname }}" itemprop="name">{{ .shortname }}</a><br>
         <a class="logo-link" href="/" title="{{ .shortdescription }}" itemprop="name">{{ .shortdescription }}</a>
     </h1>
-    <h2 class="tagline">{{ .date }}</h2>
+    {{ with .date }}
+    <div itemprop="startDate" style="display: none;">{{ .start }}</div>
+    <div itemprop="endDate" style="display: none;">{{ .end }}</div>
+    <h2 class="tagline">{{ dateFormat "Jan 2" .start }} - {{ dateFormat "Jan 2 2006" .end }}</h2>
+    {{ end }}
     <br>
-    <h2 class="tagline">{{ .venue }}, {{ .city }}</h2>
+    <h2 class="tagline">{{ .venue }}, {{ .city }} {{ .state }}</h2>
 
     <div class="call-action-area">
       {{ with .price }}

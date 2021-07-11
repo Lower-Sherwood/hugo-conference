@@ -5,9 +5,17 @@
 
   <meta charset="utf-8">
   <meta name="author" content="{{ .Site.Params.Name }}" />
-  <meta name="description" content="{{ .Site.Params.Description }}">
+  <meta name="description" content="{{ .Site.Params.Description }}" itemprop="description">
   <meta name="viewport" content="width=device-width">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta itemprop="eventAttendanceMode" content="https://schema.org/{{ .Site.Params.AttendanceMode }}" />
+  {{- with .Site.Params.Image }}
+  <meta itemprop="image" content="{{.}}" />
+  {{- end -}}
+  {{- with .Site.Params.EventStatus -}}
+  <meta itemprop="eventStatus" content="https://schema.org/{{.}}" />
+  {{- end -}}
+  <meta itemprop="url" content="https:{{.Permalink}}" />
 
   {{ hugo.Generator }}
   {{ template "_internal/opengraph.html" . }}
@@ -15,17 +23,36 @@
 
   {{ partial "favicons.html" . }}
 
-  <link rel="stylesheet" type="text/css" href="/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/css/form.css">
+  {{ partial "head_mailchimp.html" . }}
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  
+  {{"<!-- CSS from params -->" | safeHTML}}
+  {{ with .Site.Params.css -}}
+    {{- $css := slice -}}
+    {{- range . -}}
+        {{- $css = $css | append (resources.Get . ) -}}
+    {{- end -}}
+    {{- $css = $css | resources.Concat "css/main.css" | minify | fingerprint -}}
+    <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}" media="screen">
+  {{- end }}
+
+  {{"<!-- js from params -->" | safeHTML}}
+  {{ with .Site.Params.js -}}
+    {{- range . -}}
+      {{- $js := resources.Get . -}}
+      {{- $secureJS := $js | minify | resources.Fingerprint "sha512" -}}
+      <script src="{{ $secureJS.Permalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
+    {{- end -}}
+  {{- end -}}
 
   <link rel="manifest" href="{{ "site.webmanifest" | relURL }}">
 
   <script src="https://use.fontawesome.com/165033574b.js"></script>
 
-  {{ partial "gtm_header.html" . }}
+  {{ partial "ga_header.html" . }}
 
 </head>
 <body>
-  {{ partial "gtm_body.html" . }}
   <div class="global">
 

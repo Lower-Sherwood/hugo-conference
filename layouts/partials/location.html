@@ -1,13 +1,14 @@
 <h2 class="section-title">{{ .titles.location }}</h2>
 
-<p>
 <p itemprop="location" itemscope itemtype="https://schema.org/Place">
-<span itemprop="name">{{ .venue}}</span></p>
-<p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+<span itemprop="name">{{ .venue }}</span>
+<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
   <span itemprop="streetAddress">{{ .address }}. </span>
   <span itemprop="addressLocality">{{ .city }}</span>,
   <span itemprop="addressRegion"> {{ .state }}</span>
+</span>
 </p>
+
 
 <div id="map-canvas" class="location-area" data-address="{{ .address }}, {{ .city }} - {{ .state }}"></div>
 <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key={{ .Site.Params.GoogleMapsAPIKey }}&callback=initMap"></script>-->

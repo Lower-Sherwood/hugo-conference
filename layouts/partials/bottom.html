@@ -1,25 +1,10 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 {{ if isset .Site.Params "address" }}
 <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ .Site.Params.GoogleMapsAPIKey }}&libraries=places&callback=initialize"></script>
-<script src="/js/map.js"></script>
 {{ end }}
-
-<script src="/js/stupidtable.js"></script>
-<script>
- $(function(){
-   $("table").stupidtable();
-  });
-</script>
-
-<script src="/js/scroll.js"></script>
-
-<script src="/js/expandable.js"></script>
 
 {{ partial "fonts.html" . }}
 
 {{ template "_internal/google_analytics_async.html" . }}
-
-<script src="/js/modal.js"></script>
 
 </body>
 </html>
