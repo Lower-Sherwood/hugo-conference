@@ -25,7 +25,7 @@
 
   {{ partial "head_mailchimp.html" . }}
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="//code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   
   {{"<!-- CSS from params -->" | safeHTML}}
   {{ with .Site.Params.css -}}
@@ -48,7 +48,9 @@
 
   <link rel="manifest" href="{{ "site.webmanifest" | relURL }}">
 
-  <script src="https://use.fontawesome.com/165033574b.js"></script>
+  {{ with .Site.Params.FontAwesome}}
+    <script src="//kit.fontawesome.com/{{.}}.js" crossorigin="anonymous"></script>
+  {{ end }}
 
   {{ partial "ga_header.html" . }}
 
