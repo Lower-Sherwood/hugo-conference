@@ -9,6 +9,24 @@
   <meta name="viewport" content="width=device-width">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta itemprop="eventAttendanceMode" content="https://schema.org/{{ .Site.Params.AttendanceMode }}" />
+
+  {{- with .Site.Params.Organizer}}
+  <span itemprop="organizer" itemscope itemtype="https://schema.org/Organization">
+    {{- with .name }}
+      <meta itemprop="name" content="{{ . }}">
+    {{- end }}
+    {{- with .email }}
+      <meta itemprop="email" content="{{ . }}">
+    {{- end }}
+    {{- with .url }}
+      <meta itemprop="url" content="{{ . }}">
+    {{- end }}
+    {{- with .description }}
+      <meta itemprop="description" content="{{ . }}">
+    {{- end }}
+  </span>
+  {{- end -}}
+
   {{- with .Site.Params.Image }}
   <meta itemprop="image" content="{{.}}" />
   {{- end -}}
