@@ -1,5 +1,4 @@
 /* =============================================================================
- * vertical-align: top;
    RESET
    ========================================================================== */
 * {
@@ -9,19 +8,6 @@
   border: 0;
   text-decoration: none;
 }
-
-th[data-sort]{
-      cursor:pointer;
-}
-
-.expand {
-  cursor:pointer;
-}
-
-.expandable {
-    display:none;
-}
-
 img,
 input,
 label {
@@ -192,7 +178,7 @@ button,
 input,
 select,
 textarea {
-  font-size: 1.4em;
+  font-size: 100%;
   margin: 0;
   vertical-align: baseline;
   *vertical-align: middle;
@@ -252,7 +238,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
-  table-layout: fixed;
 }
 td {
   vertical-align: middle;
@@ -299,9 +284,9 @@ hr {
 .content {
   padding: 50px 0;
 }
-/*.content section {
+.content section {
   padding-top: 50px;
-}*/
+}
 /* =============================================================================
    BASIC STYLES
    ========================================================================== */
@@ -311,7 +296,6 @@ h4 {
   font-size: 5em;
   font-weight: normal;
   margin-bottom: .4em;
-  margin-top: .6em;
   letter-spacing: -0.02em;
 }
 h3 {
@@ -325,14 +309,6 @@ p {
   line-height: 1.6em;
   margin-bottom: 1.4em;
 }
-.sponsors-tbl p {
-  margin-bottom: 2em;
-}
-
-.vendors-tbl p {
-  margin-bottom: 2em;
-}
-
 .photo {
   max-width: 100%;
   position: relative;
@@ -359,37 +335,31 @@ nav {
    ========================================================================== */
 .header {
   padding: 100px 0 100px;
-  text-align: right;
+  text-align: center;
 }
 .logo-name {
   margin-bottom: 0;
-  font-size: 7em;
+  font-size: 10em;
   letter-spacing: -0.04em;
 }
 .tagline {
-  margin-bottom: 15px;
-  font-size: 50px;
+  margin-bottom: 50px;
+  font-size: 2em;
   letter-spacing: -0.02em;
 }
 .call-action-area .price {
-  font-size: 3em;
+  font-size: 4em;
   vertical-align: center;
   margin-right: 20px;
 }
-.paypal-button {
-    float: right;
-    margin-bottom: 15px;
-    margin-right: 30px;
-}
 .call-action-area .call-action-link,
-.btn,
-.button {
+.btn {
   position: relative;
   top: -5px;
   cursor: pointer;
   display: inline-block;
   padding: 15px 30px;
-  font-size: 1.8em;
+  font-size: 2em;
   line-height: 1em;
   vertical-align: center;
   letter-spacing: -0.02em;
@@ -402,9 +372,7 @@ nav {
 .call-action-area .call-action-link:hover,
 .call-action-area .call-action-link:focus,
 .btn:hover,
-.btn:focus,
-.button:hover,
-.button:focus {
+.btn:focus {
   top: 0;
 }
 /* =============================================================================
@@ -414,118 +382,6 @@ nav {
   padding: 19px;
   margin: 0 -20px 0;
 }
-
-.vendors {
-  padding: 19px;
-  margin: 0 -20px 0;
-}
-
-.partners {
-  padding: 19px;
-  margin: 0 -20px 0;
-}
-
-.results {
-  padding: 19px;
-  margin: 0 -20px 0;
-}
-
-/* Downloadable forms */
-.downloads {
-  padding: 19px;
-  margin: 0 -20px 0;
-}
-
-/* Contact */
-.contact {
-  padding: 19px;
-  margin: 0 -20px 0;
-}
-
-/* Location */
-.location {
-  padding: 19px;
-  margin: 0 -20px 0;
-}
-
-/* Schedule  */
-.schedule {
-  padding: 19px;
-  margin: 0 -20px 0;
-}
-
-/* sponsors */
-.sponsors {
-  padding: 19px;
-  margin: 0 -20px 0;
-}
-
-
-/* Register */
-.register,
-.registration {
-  padding: 19px;
-  margin: 0 -20px 0;
-}
-
-.register-photo,
-.registration-photo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 120px;
-  height: 120px;
-}
-
-.registration-item {
-  position: relative;
-  min-height: 180px;
-  padding-left: 180px;
-  margin-bottom: 30px;
-  border-bottom: 1px dashed #e7e7e7;
-}
-
-.sponsors-photo,
-.vendors-photo {
-  top: 0;
-  width: auto;
-  height: auto;
-  max-width: 150px;
-  max-height: 200px;
-  margin-left: auto;
-  margin-right: auto;
-  vertical-align: top;
-}
-
-.sponsors-item,
-.vendors-item {
-  position: left;
-  min-height: 180px;
-  padding-left: 180px;
-  margin-bottom: 30px;
-  border-bottom: 1px dashed #e7e7e7;
-}
-
-.vendors-photo {
-  top: 0;
-  width: auto;
-  height: auto;
-  max-width: 150px;
-  max-height: 200px;
-  margin-left: auto;
-  margin-right: auto;
-  vertical-align: top;
-}
-
-.vendors-item {
-  position: left;
-  min-height: 180px;
-  padding-left: 180px;
-  margin-bottom: 30px;
-  border-bottom: 1px dashed #e7e7e7;
-}
-
 /* =============================================================================
    SPEAKER
    ========================================================================== */
@@ -560,132 +416,31 @@ nav {
 .speakers-item p {
   font-size: 1.4em;
 }
-
-/* registration table */
-.registration-text p {
-  font-size: 1.4em;
-  margin-bottom: 0.25em;
-}
-
-.registraton-tbl {
-  padding: 20px;
-}
-
-.registration-tbl table,
-.contact-tbl table {
-  border-collapse: collapse;
-  font-size: 1em;
-}
-.registration-tbl td,
-.registration-tbl th,
-.contact-tbl td,
-.contact-tbl th {
-  position: relative;
-  padding: 20px 30px;
-/*  font-size: 1.4em;*/
-  line-height: 1.4em;
-  text-align: left;
-}
-.registration-tbl th,
-.contact-tbl th {
-  padding: 5px 30px;
-  color: #2b2b2b;
-  font-size: 1.8em;
-  font-weight: bold;
-}
-
-.register-tbl .register-photo,
-.registration-tbl .registration-photo {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  float: left;
-  margin-right: 20px;
-}
-
 /* =============================================================================
-   SCHEDULE, SPONSOR, VENDORS  & DOWNLOADS
+   SCHEDULE
    ========================================================================== */
-.sponsors-tbl,
-.vendors-tbl,
-.downloads-tbl,
-.schedule-tbl,
-.results-tbl {
+.schedule-tbl {
   padding: 20px;
 }
-
-.sponsors-tbl,
-.vendors-tbl,
-.downloads-tbl,
-.schedule-tbl,
-.results-tbl table {
+.schedule-tbl table {
   border-collapse: collapse;
   font-size: 1em;
 }
-.sponsors-tbl td,
-.sponsors-tbl th,
-.vendors-tbl td,
-.vendors-tbl th {
-  position: relative;
-  font-size: 1.4em;
-  line-height: 1.4em;
-  text-align: center;
-  vertical-align: bottom;
-}
-
-.downloads-tbl td,
-.downloads-tbl th {
-  position: relative;
-  padding: 5px 5px;
-  font-size: 1.2em;
-  line-height: 1.4em;
-  text-align: center;
-  vertical-align: super;
-}
-
-.results-tbl td,
-.results-tbl th {
-  position: relative;
-  padding: 5px 5px;
-  font-size: 1.5em;
-  line-height: 1.4em;
-  text-align: center;
-}
-
+.schedule-tbl td,
 .schedule-tbl th {
   position: relative;
-  padding: 10px 20px;
-  font-size: 1.0em;
+  padding: 20px 30px;
+  font-size: 1.4em;
   line-height: 1.4em;
   text-align: left;
-  font-weight: bolder;
 }
-
-.schedule-tbl td {
-  position: relative;
-  padding: 10px 20px;
-  font-size: 1.0em;
-  line-height: 1.4em;
-  text-align: left;
-  font-weight: normal;
-}
-
-.schedule-tbl {
-  padding: 5px 30px;
-  color: #2b2b2b;
-  font-size: 2em;
-}
-
-.sponsors-tbl th,
-.downloads-tbl th,
-.results-tbl th,
-.vendors-tbl th, {
+.schedule-tbl th {
   padding: 5px 30px;
   color: #2b2b2b;
   font-size: 2em;
   font-weight: bolder;
 }
-.schedule-tbl .speaker-photo .vendor-photo {
+.schedule-tbl .speaker-photo {
   position: relative;
   width: 40px;
   height: 40px;
@@ -703,28 +458,16 @@ nav {
   display: block;
   font-size: 12px;
 }
-
-/*
-#sponsors_table{
-  display: block;
-}
-
-#sponsors_table td{
-  display: inline-block;
-}
-
-*/
-
 /* =============================================================================
    SPONSORS  and  PARTNERS
    ========================================================================== */
-.sponsors-item,
-.partners-item,
-.vendors-item {
+.sponsor-item,
+.partner-item {
   display: inline-block;
   margin: 0 30px 30px 0;
 }
-.partners-link {
+.sponsor--link,
+.partner-link {
   display: block;
   width: 150px;
   height: 150px;
@@ -733,7 +476,7 @@ nav {
   line-height: 150px;
 }
 /* =============================================================================
-   CONTACT
+   CONTATO
    ========================================================================== */
 .form label {
   font-size: 16px;
@@ -771,9 +514,7 @@ nav {
 .form textarea {
   height: 300px;
 }
-.form .btn,
-.button,
-.btn {
+.form .btn {
   float: right;
 }
 /* =============================================================================
@@ -791,56 +532,10 @@ nav {
   .about {
     margin: 0;
   }
-  .vendors {
-    margin: 0;
-  }
-  .partners {
-    margin: 0;
-  }
-  .results {
-    margin: 0;
-  }
-  .sponsors {
-    margin: 0;
-  }
-  .downloads{
-    margin: 0;
-  }
-  .contact {
-    margin: 0;
-  }
-  .location {
-    margin: 0;
-  }
-  .schedule {
-    margin: 0;
-  }
-  .register {
-    margin: 0;
-  }
-  .registration {
-    margin: 0;
-  }
-  .registration-text p {
-    font-size: 1.4em;
-    margin-bottom: 0.25em;
-  }
 }
 @media only screen and (min-width: 320px) and (max-width: 800px) {
-  /* results */
-  .results-tbl, {
-    padding: 1px;
-  }
-  .results-tbl td,
-  .results-tbl th {
-    padding: 10px;
-  }
-  .results-tbl th {
-    padding: 10px;
-    font-size: 1.8em;
-  }
   /* schedule */
-  .schedule-tbl, {
+  .schedule-tbl {
     padding: 1px;
   }
   .schedule-tbl td,
@@ -849,7 +544,7 @@ nav {
   }
   .schedule-tbl th {
     padding: 10px;
-    font-size: 12px;
+    font-size: 1.8em;
   }
   .schedule-tbl .speaker-photo {
     width: 40px;
@@ -867,22 +562,17 @@ nav {
     width: 60px;
     padding: 10px 0 10px 5px;
     text-align: left;
-    font-size: 12px;
   }
   .schedule-tbl td.schedule-description {
     font-size: 12px;
   }
-
-
   /* partners */
-  .sponsors-item,
-  .partners-item,
-  .vendors-item {
+  .sponsor-item,
+  .partner-item {
     margin: 0 5px 10px 0;
   }
-  .sponsors-link,
-  .partners-link,
-  .vendors-link, {
+  .sponsor--link,
+  .partner-link {
     width: 95px;
     height: 95px;
     line-height: 95px;
@@ -896,8 +586,7 @@ nav {
     margin-right: 0;
   }
   .form .btn {
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 50px;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -943,7 +632,7 @@ nav {
     padding: 0;
   }
   .content section {
-    padding-top: 19px;
+    padding-top: 50px;
   }
   /* speakers */
   .speakers-item {
@@ -966,41 +655,25 @@ nav {
   .speakers-bio {
     display: none;
   }
-
-   .schedule-tbl td.schedule-description {
-     font-size: 12px;
-   }
-
 }
 @media only screen and (max-width: 321px) {
   .logo-name {
     font-size: 4em;
     margin-bottom: .4em;
   }
-  .schedule-tbl .schedule-description,
-  .sponsors-list, .sponsors-item,
-  .vendors-list, .vendors-item,
-  .registration-list .registration-item {
+  .schedule-tbl .schedule-description {
     display: none;
   }
-  .registration-text p {
-    font-size: 1.4em;
-    margin-bottom: 0.25em;
-  }
-
   .schedule-tbl .schedule-slot {
     width: auto;
   }
   /* partners */
-  .sponsors-item,
-  .partners-item,
-  .vendors-item,
-  .registration-item {
+  .sponsor-item,
+  .partner-item {
     margin: 0 12px 15px 0;
   }
-  .sponsors-link,
-  .partners-link,
-  .vendors-link {
+  .sponsor--link,
+  .partner-link {
     width: 115px;
     height: 115px;
     line-height: 115px;
@@ -1017,10 +690,7 @@ html {
 /* =============================================================================
    BASIC STYLES
    ========================================================================== */
-
-h1 {
-  color: #2b2b2b;
-}
+h1,
 h2,
 h3,
 h4,
@@ -1089,20 +759,13 @@ nav {
 /* =============================================================================
    CONTENT
    ========================================================================== */
-.content a:not(.btn) {
+.content a {
   color: #f0a303;
 }
 .content a:hover,
 .content a:focus {
   color: #fddd52;
   text-decoration: underline;
-}
-/* Register */
-.register,
-.registration {
-  border: 1px solid #e7e7e7;
-  background: #fff;
-  border-radius: 4px;
 }
 /* =============================================================================
    ABOUT
@@ -1112,49 +775,9 @@ nav {
   background: #fff;
   border-radius: 4px;
 }
-.vendors {
-  border: 1px solid #e7e7e7;
-  background: #fff;
-  border-radius: 4px;
-}
-.partners {
-  border: 1px solid #e7e7e7;
-  background: #fff;
-  border-radius: 4px;
-}
-.results {
-  border: 1px solid #e7e7e7;
-  background: #fff;
-  border-radius: 4px;
-}
-/* sponsors */
-.sponsors {
-  border: 1px solid #e7e7e7;
-  background: #fff;
-  border-radius: 4px;
-}
-/* Downloadable forms */
-.downloads {
-  border: 1px solid #e7e7e7;
-  background: #fff;
-  border-radius: 4px;
-}
-/* =============================================================================
-   RESULTS
-   ========================================================================== */
-.results {
-  border: 1px solid #e7e7e7;
-  background: #fff;
-  border-radius: 4px;
-}
 /* =============================================================================
    LOCATION
    ========================================================================== */
-.location {
-  border: 1px solid #e7e7e7;
-  background: #fff;
-  border-radius: 4px;
-}
 .location-area {
   background: #e7e7e7;
   border: 1px solid #ccc;
@@ -1164,9 +787,7 @@ nav {
 /* =============================================================================
    SPEAKER
    ========================================================================== */
-.speaker-photo .photo,
-.register-photo .photo,
-.registration-photo .photo {
+.speaker-photo .photo {
   border-radius: 50%;
   box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.07);
   -webkit-transition: all 0.3s ease-out;
@@ -1175,9 +796,7 @@ nav {
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-.speakers-item:hover .speaker-photo .photo,
-.register-item:hover .register-photo .photo,
-.registration-item:hover .registration-photo .photo {
+.speakers-item:hover .speaker-photo .photo {
   box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.3);
 }
 .speech-time {
@@ -1185,54 +804,9 @@ nav {
   background: #2b2b2b;
   border-radius: 8px;
 }
-
-/* =============================================================================
-   REGISTRATION & Contact
-   ========================================================================== */
-.registration {
-  background: #ffffff;
-  border: 1px solid #e7e7e7;
-  border-radius: 4px;
-}
-.registration-tbl,
-.contact-tbl {
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15);
-}
-.registration-tbl table,
-.contact-tbl table {
-  background: #fff;
-}
-.registration-tbl td,
-.registration-tbl th,
-.contact-tbl td,
-.contact-tbl th{
-  border-bottom: 1px solid #e7e7e7;
-}
-.registration-tbl tbody tr:nth-child(2n+1),
-.contact-tbl tbody tr:nth-child(2n+1) {
-  background: #f6f6f6;
-}
-.registration-tbl th,
-.contact-tbl th {
-  color: #2b2b2b;
-}
-.registration-tbl tbody tr:hover,
-.contact-tbl tbody tr:hover {
-  background: #fffde1;
-}
-
-
 /* =============================================================================
    SCHEDULE
    ========================================================================== */
-.schedule {
-  background: #ffffff;
-  border: 1px solid #e7e7e7;
-  border-radius: 4px;
-}
 .schedule-tbl {
   background: #fff;
   border: 1px solid #ccc;
@@ -1255,33 +829,6 @@ nav {
 .schedule-tbl .speaker-photo .photo {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
 }
-.results-tbl {
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15);
-}
-.results-tbl table {
-  background: #fff;
-}
-.results-tbl td,
-.results-tbl th {
-  border-bottom: 1px solid #e7e7e7;
-}
-.results-tbl tbody tr:nth-child(2n+1) {
-  background: #f6f6f6;
-}
-.results-tbl th {
-  color: #2b2b2b;
-}
-.results-tbl .speaker-photo .photo {
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
-}
-
-.register-tbl .register-photo .photo,
-.registration-tbl .registration-photo .photo {
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
-}
 .speakers-company {
   color: #999;
 }
@@ -1289,9 +836,6 @@ nav {
   color: #2b2b2b;
 }
 .schedule-tbl tbody tr:hover {
-  background: #fffde1;
-}
-.results-tbl tbody tr:hover {
   background: #fffde1;
 }
 .schedule-coffee,
@@ -1303,24 +847,21 @@ nav {
 /* =============================================================================
    SPONSORS
    ========================================================================== */
-.partners-link {
+.sponsor--link,
+.partner-link {
   background: #fff;
   border: 1px solid #ccc;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15);
 }
-.partners-link:hover,
-.partners-link:focus {
+.sponsor--link:hover,
+.sponsor--link:focus,
+.partner-link:hover,
+.partner-link:focus {
   border-color: #f0a303;
 }
-
 /* =============================================================================
    CONTACT
    ========================================================================== */
-.contact {
-  border: 1px solid #e7e7e7;
-  background: #fff;
-  border-radius: 4px;
-}
 .form input[type=text],
 .form input[type=email],
 .form textarea {
@@ -1348,23 +889,6 @@ nav {
   .speaker-photo .photo {
     box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.07);
   }
-  .schedule-tbl td.schedule-description {
-    font-size: 12px;
-  }
-
-  .schedule-tbl td.schedule-description {
-    font-size: 12px;
-  }
-
-  .contact-tbl td,
-  .contact-tbl th{
-    padding: 10px;
-  }
-  .contact-tbl th {
-    padding: 10px;
-    font-size: 1.8em;
-  }
-
   .speech-title {
     font-weight: bolder;
   }
@@ -1376,16 +900,4 @@ nav {
   .github-link {
     display: none;
   }
-}
-
-/* Cart Customizations */
-#snipcart-main-content .custom-snipcart-footer-text {
-  background-color: rgba(240,240,240,1);
-  padding: 10px 20px;
-}
-
-#snipcart-main-content .custom-snipcart-footer-text h2 {
-  font-size: larger;
-  font-weight: bold;
-  padding: 10px 0;
 }
