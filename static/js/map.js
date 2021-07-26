@@ -5,8 +5,8 @@ function initialize() {
 
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map-canvas'), {
-    zoom: 16,
-    center: {lat: -34.397, lng: 150.644}
+    zoom: 16, 
+    center: {lat: 37.883680586603575, lng: -78.50607403138893}
   });
   var geocoder = new google.maps.Geocoder();
 
