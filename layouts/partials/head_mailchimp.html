@@ -1,0 +1,11 @@
+{{ with .Site.Params.contact.mailchimp }}
+{{ if eq .type "classic" }}
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+{{ else if eq .type "condensed"}}
+<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
+{{ else if eq .type "horizontal" }}
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+{{ end }}
+{{ end }}
+
+

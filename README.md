@@ -13,7 +13,7 @@ This version is specifically tailored for the [2018 Sherwoodstock Llama show](ht
         cd my-conf
         git clone https://github.com/jweslley/hugo-conference themes/hugo-conference
         rm -f config.toml
-        cp themes/hugo-conference/config.yml .
+        cp themes/hugo-conference/exampleSite/config.yml .
 
 3. It's done. Just start Hugo server to see it live!
 
@@ -33,6 +33,10 @@ By default, the site have the following sections:
 - Partners - to show the brand of your partners.
 
 Ps: It's important to change the `baseurl` property from `config.yml` file in order to reflect your settings.
+
+### Google Maps
+
+Google now requires a Google Maps JavaScript API Key to show maps. You can obtain your key [here](https://developers.google.com/maps/documentation/javascript/get-api-key). Then set your API key in the `GoogleMapsKey` param in the `config.yml` file.
 
 ## License
 

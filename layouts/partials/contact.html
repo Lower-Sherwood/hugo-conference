@@ -1,50 +1,77 @@
 <h2 class="section-title">{{ .titles.contact }}</h2>
 
 <ul class="contact-list">
-    {{ range .contact }}
+    {{ range .contact.text }}
     <p>
       {{ . }}
     </p>
     {{ end }}
+  </ul>
 
-<!--Start Mailblast Signup Form-->
-<div class="mb-embed">
-  <link rel="stylesheet" media="screen" href="https://cdn.mailblast.io/stylesheets/mb-embed-1-2.css">
-  <style type="text/css">
-    /* Add any css overrides you require here */
-.mb-embed .mb-form-group .mb-subscribe {transition-timing-function: ease-out; background-color: #fddd52; text-align: left; height: auto; transition-duration: 0.3s; color: #2b2b2b; border-radius: 40px; font-size: 18px; padding-bottom: 15px; padding-left: 30px; padding-right: 30px; padding-top: 15px; border-collapse: collapse; margin-bottom: 15px; margin-left: 0px; margin-right: 0px; margin-top: 15px; top: -5px; line-height: 18px; display: inline-block; position: relative;}
-  </style>
+{{ with .contact.mailchimp }}
 
-  <!-- You can customize the default success message here -->
-  <h2 class="mb-message mb-success-message" default-message="Thank you for Subscribing!"></h2>
-  <h2 class="mb-message mb-error-message"></h2>
+  <div id="mc_embed_signup">
+  <form action="https://{{.url}}/subscribe/post?u={{.user}}&amp;id={{.id}}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+      <div id="mc_embed_signup_scroll">
 
-  <form method="post" action="https://mailblast.io/lists/67b9711c-cef5-44ff-a206-7de050cbbe16/subscribers/create_external" class="mb-form" novalidate="novalidate">
+  <!-- Begin Mailchimp Signup Form -->
 
-    <div class="mb-form-group">
-      <label>Email Address (required)</label>
-      <input type="email" name="subscriber[email]" class="mb-email" required="" aria-required="true">
-    </div>
+  {{ if eq .type "classic" }}
 
-    <div class="mb-form-group">
-      <label class="mb-name">First Name</label>
-      <input type="text" name="subscriber[first_name]" class="mb-name mb-first-name">
-    </div>
-
-    <div class="mb-form-group">
-      <label class="mb-name">Last Name</label>
-      <input type="text" name="subscriber[last_name]" class="mb-name mb-last-name">
-    </div>
-
-    <div class="mb-form-group-tk" aria-hidden="true">
-      <input type="text" name="mb_67b9711ccef544ffa2067de050cbbe16" tabindex="-1" value="">
-    </div>
-
-    <div class="mb-form-group mb-subscribe">
-
-      <button type="submit" class="btn button mb-subscribe">Subscribe</button>
-    </div>
+  <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+  <div class="mc-field-group">
+    <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+  </label>
+    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+  </div>
+  <div class="mc-field-group">
+    <label for="mce-FNAME">First Name </label>
+    <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+  </div>
+  <div class="mc-field-group">
+    <label for="mce-LNAME">Last Name </label>
+    <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
+  </div>
+  <div class="mc-field-group input-group">
+      <strong>Which of our services are you interested in? Check all that apply.</strong>
+      <ul><li><input type="checkbox" value="1" name="group[6916][1]" id="mce-group[6916]-6916-0"><label for="mce-group[6916]-6916-0">&nbsp;Attending our events</label></li>
+  <li><input type="checkbox" value="2" name="group[6916][2]" id="mce-group[6916]-6916-1"><label for="mce-group[6916]-6916-1">&nbsp;Being a vendor at our events</label></li>
+  <li><input type="checkbox" value="4" name="group[6916][4]" id="mce-group[6916]-6916-2"><label for="mce-group[6916]-6916-2">&nbsp;Exhibiting at our shows</label></li>
+  <li><input type="checkbox" value="8" name="group[6916][8]" id="mce-group[6916]-6916-3"><label for="mce-group[6916]-6916-3">&nbsp;Our llama treks</label></li>
+  <li><input type="checkbox" value="16" name="group[6916][16]" id="mce-group[6916]-6916-4"><label for="mce-group[6916]-6916-4">&nbsp;Baked goods from our cottage bakery</label></li>
+  <li><input type="checkbox" value="32" name="group[6916][32]" id="mce-group[6916]-6916-5"><label for="mce-group[6916]-6916-5">&nbsp;Our farm store</label></li>
+  </ul>
+  </div>
+  <div id="mce-responses" class="clear">
+    <div class="response" id="mce-error-response" style="display:none"></div>
+    <div class="response" id="mce-success-response" style="display:none"></div>
+  </div>
+  <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="bb_{{.user}}_{{.id}}" tabindex="-1" value=""></div>
+  <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+  </div>
   </form>
-  <script src="https://cdn.mailblast.io/javascripts/mb-embed-1-2.js"></script>
-</div>
-<!--End Mailblast Signup Form-->
+  </div>
+  <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+  <!--End mc_embed_signup-->
+  {{ else if eq .type "condensed"}}
+
+    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+      <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+      <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_{{.user}}_{{.id}}" tabindex="-1" value=""></div>
+      <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+      </div>
+      </form>
+  </div>
+  <!--End mc_embed_signup-->
+  {{ else if eq .type "horizontal"}}
+    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+      <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+      <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_{{.user}}_{{.id}}" tabindex="-1" value=""></div>
+      <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+      </div>
+  </form>
+  </div>
+  <!--End mc_embed_signup-->
+  {{end}}
+{{end}}

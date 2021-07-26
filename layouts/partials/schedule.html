@@ -25,7 +25,9 @@
                 </span>
               {{ end }}
               {{ .presentation.title }}
-              <span class="speakers-company">{{ .company }}</span>
+              {{ with .company}}
+              <span class="speakers-company">{{ . }}</span>
+              {{ end}}
               </td>
               <td class="schedule-description">{{ .presentation.description }}</td>
             </tr>
@@ -33,7 +35,11 @@
             <tr class="schedule-other">
               <td class="schedule-time">{{ .time }}</td>
               <td class="schedule-slot">{{ .name }}</td>
-              <td class="schedule-description">{{ .description }}</td>
+              <td class="schedule-description">{{ if .anchor }}<a href="#{{.anchor}}">See below for description.</a>
+              {{ else }}
+              {{ .description }}
+              {{ end }}
+              </td>
             </tr>
           {{ end }}
         {{ end }}
