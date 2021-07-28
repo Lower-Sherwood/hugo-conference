@@ -35,28 +35,29 @@
   {{- end -}}
   <meta itemprop="url" content="https:{{.Permalink}}" />
 
-  {{ hugo.Generator }}
-  {{ template "_internal/opengraph.html" . }}
-  {{ template "_internal/twitter_cards.html" . }}
+  {{- hugo.Generator }}
+  {{- template "_internal/opengraph.html" . }}
+  {{- template "_internal/twitter_cards.html" . }}
 
-  {{ partial "favicons.html" . }}
-
-  {{ partial "head_mailchimp.html" . }}
+  {{- partial "favicons.html" . }}
+  {{ with .Site.Params.contact.mailchimp }}
+    {{- partial "head_mailchimp.html" . -}}
+  {{- end }}
 
   <script src="//code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   
   {{"<!-- CSS from params -->" | safeHTML}}
-  {{ with .Site.Params.css -}}
+  {{ with .Site.Params.css }}
     {{- $css := slice -}}
     {{- range . -}}
-        {{- $css = $css | append (resources.Get . ) -}}
+        {{- $css = $css | append (resources.Get .) -}}
     {{- end -}}
-    {{- $css = $css | resources.Concat "css/main.css" | minify | fingerprint -}}
-    <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}" media="screen">
+    {{- $secureCss := $css |resources.Concat "css/main.css"| minify | resources.Fingerprint "sha512" -}}
+    <link rel="stylesheet" href="{{ $secureCss.Permalink }}" integrity="{{ $secureCss.Data.Integrity }}" media="screen">
   {{- end }}
 
   {{"<!-- js from params -->" | safeHTML}}
-  {{ with .Site.Params.js -}}
+  {{ with .Site.Params.js }}
     {{- range . -}}
       {{- $js := resources.Get . -}}
       {{- $secureJS := $js | minify | resources.Fingerprint "sha512" -}}
@@ -66,11 +67,11 @@
 
   <link rel="manifest" href="{{ "site.webmanifest" | relURL }}">
 
-  {{ with .Site.Params.FontAwesome}}
-    <script src="//kit.fontawesome.com/{{.}}.js" crossorigin="anonymous"></script>
-  {{ end }}
+  {{- with .Site.Params.FontAwesome}}
+  <script src="//kit.fontawesome.com/{{.}}.js" crossorigin="anonymous"></script>
+  {{- end }}
 
-  {{ partial "ga_header.html" . }}
+  {{- partial "ga_header.html" . }}
 
 </head>
 <body>
