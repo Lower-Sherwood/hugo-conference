@@ -10,9 +10,10 @@
         {{ end }}
         <td>
         {{ if $e.logo }}
-          <p><a href="{{ .url }}" target="_blank" class="sponsors-link" itemprop="url"><img src="{{ .logo }}" alt="{{ .name }}" class="sponsors-photo" itemprop="image"></a><br><a href="{{ .url }}" target="_blank" class="sponsors-link" itemprop="url">{{- .name -}}</a></p>
+        {{ with $e.url }}<a href="{{ . }}" target="_blank" class="sponsors-link" itemprop="url"> {{end}}
+          <img src="{{ .logo }}" alt="{{ .name }}" class="sponsors-photo" itemprop="image">{{ with $e.url }}</a>{{end}}<br>{{ with $e.url }}<a href="{{ . }}" target="_blank" itemprop="url">{{end}}{{- .name -}}{{ with $e.url }}</a>{{end}}
         {{ else if $e.url }}
-          <p><a href="{{ .url }}" target="_blank" class="sponsors-link" itemprop="url">{{- .name -}}</a></p>
+          <a href="{{ .url }}" target="_blank" class="sponsors-link" itemprop="url">{{- .name -}}</a>
         {{ else }}
           <p>{{ $e.name }}</p>
         {{ end }}
