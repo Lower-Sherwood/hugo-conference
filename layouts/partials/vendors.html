@@ -1,8 +1,15 @@
 <h2 class="section-title">{{ .titles.vendors }}</h2>
+{{ with .vendors.text}}
+<ul class="vendors-list">
+  <p>
+  {{.}}
+</p>
+</ul>
+{{ end }}
 <ul class="vendors-tbl">
   <table>
     <tr>
-      {{ range $i, $e := .vendors}}
+      {{ range $i, $e := .vendors.vendors}}
         {{ if (and (modBool $i 3) (gt $i 0))}}
           </tr><tr>
         {{ end }}
