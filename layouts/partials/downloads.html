@@ -13,7 +13,7 @@
       <tr>
       {{ range $downloads := .downloads }}
       <td>
-          <p><a href="{{ .filename }}" target="_blank"><i class="fas fa-file-{{ .icon }} fa-3x" aria-hidden="true" style="vertical-align: middle;"></i></a><br>{{ .displaytext }}</p>
+          <p><a href="{{ .filename }}" target="_blank"><i class="fas fa-{{ .icon }} fa-3x" aria-hidden="true" style="vertical-align: middle;"></i></a><br>{{ .displaytext }}</p>
       </td>
       {{ end }}
     {{ end }}
