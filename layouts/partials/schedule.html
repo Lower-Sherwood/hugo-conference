@@ -35,7 +35,7 @@
             <tr class="schedule-other">
               <td class="schedule-time">{{ .time }}</td>
               <td class="schedule-slot">{{ .name }}</td>
-              <td class="schedule-description">{{ if .anchor }}<a href="#{{.anchor}}">See below for description.</a>
+              <td class="schedule-description">{{ if .anchor }}<a href="#{{.anchor}}">See description.</a>
               {{ else }}
               {{ .description }}
               {{ end }}
