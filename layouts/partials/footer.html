@@ -1,5 +1,5 @@
 <footer class="footer">
-    <p align="center">&copy; 2018-{{ now.Format "2006" }} Lower Sherwood Farm. All Rights Reserved. <br> Powered by <a href="https://gohugo.io" target="_blank">Hugo</a>, the <a href="https://github.com/Lower-Sherwood/hugo-conference" target="_blank">Hugo Conference</a> theme, and <a href="https://www.netlify.com" target="_blank">Netlify</a>.<br>
+    <p align="center">
     {{ range $social := $.Site.Params.Social}}
       {{ if ne $social.url nil }}
       <span class="fa-stack fa-lg">
@@ -9,6 +9,8 @@
         </a>
       </span>
       {{ end }}
-    {{ end }}
+    {{ end }}<br>
+      <a href="https://lowersherwood.com/legal/terms/">Terms of Use</a>&nbsp;|&nbsp;<a href="https://lowersherwood.com/legal/privacy/">Privacy Policy</a><br>
+      &copy; 2018-{{ now.Format "2006" }} Lower Sherwood Farm. All Rights Reserved. <br>
   </p>
 </footer>
